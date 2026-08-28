@@ -4,8 +4,17 @@
   "priority": 10,
   "description": "FFmpeg 多媒体处理二进制（共享，desktop/omni 装配）",
   "upstream": {
-    "kind": "manual",
-    "source": "GyanD/ffmpeg-builds",
-    "notes": "迁移源：apps/omni/build/presetResources/ffmpeg。更新时从 GyanD/ffmpeg-builds release 对应平台构建下载并二次压缩为 zip，保持 {resourceId}-{version}-{platform}-{arch}.zip 命名。win64→win32-x64，arm64→win32-arm64。"
+    "kind": "online",
+    "provider": "BtbN/FFmpeg-Builds",
+    "releaseApi": "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases/latest",
+    "downloadBase": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest",
+    "platforms": {
+      "win32-x64": "ffmpeg-master-latest-win64-gpl.zip",
+      "win32-arm64": "ffmpeg-master-latest-winarm64-gpl.zip",
+      "linux-x64": "ffmpeg-master-latest-linux64-gpl.tar.xz",
+      "linux-arm64": "ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
+    },
+    "versionScheme": "master-YYYYMMDD（取 latest 构建日期，滚动内容不可变命名）",
+    "notes": "在线更新：advanced 资产用于 4 平台在线拉取；macOS 无 BtbN 源，暂由本地既有资产兜底。"
   }
 }

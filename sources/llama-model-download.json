@@ -4,8 +4,8 @@
   "priority": 50,
   "description": "模型下载器（共享，desktop 装配）",
   "upstream": {
-    "kind": "manual",
+    "kind": "local",
     "source": "当前仓库自有构建产物",
-    "notes": "迁移源：apps/desktop/build/presetResources/llama-model-download。按平台键归档上传。"
+    "notes": "迁移源：apps/desktop/build/presetResources/llama-model-download。该资源无任何下载来源，仅支持本地直接上传（发布时 assets 必须提供本地归档路径）。"
   }
 }

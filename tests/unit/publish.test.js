@@ -156,4 +156,74 @@ describe('publishFromManifest（发布管线）', () => {
       publishFromManifest({ manifest: { resources: { bad: { ext: 'zip', assets: { default: 'x' } } } }, ghClient: makeGhStub() })
     ).rejects.toThrow(/version/)
   })
+
+  it('本地缺失且 sources 声明在线来源时，经 fetchLocalPath 自动获取后上传', async () => {
+    const dir = makeTempDir('publish-online-')
+    const indexPath = path.join(dir, 'index.json')
+    fs.writeFileSync(indexPath, JSON.stringify({ schema: 1, containerTag: 'resources', updatedAt: '', resources: {} }), 'utf8')
+    const sourcesRoot = path.join(dir, 'sources')
+    fs.mkdirSync(sourcesRoot)
+    fs.writeFileSync(
+      path.join(sourcesRoot, 'ffmpeg.json'),
+      JSON.stringify({ resourceId: 'ffmpeg', type: 'tool', upstream: { kind: 'online', provider: 'BtbN/FFmpeg-Builds' } }),
+      'utf8'
+    )
+    // fetchLocalPath 返回临时下载产物（模拟 online 下载 + 重打包）
+    const fetched = writeFakeAsset(dir, 'fetched-ffmpeg.zip', 'online-bin')
+    const fetchLocalPath = vi.fn(async () => fetched)
+    const gh = makeGhStub()
+
+    const summary = await publishFromManifest({
+      manifest: {
+        resources: {
+          ffmpeg: { version: 'master-20260827', ext: 'zip', assets: { 'win32-x64': null } }
+        }
+      },
+      sourcesRoot,
+      indexPath,
+      dryRun: false,
+      keep: 0,
+      ghClient: gh,
+      fetchLocalPath
+    })
+
+    expect(fetchLocalPath).toHaveBeenCalledWith(expect.objectContaining({ resourceId: 'ffmpeg', platformKey: 'win32-x64' }))
+    expect(summary.uploaded.map(u => u.name)).toContain('ffmpeg-master-20260827-win32-x64.zip')
+    expect(summary.missing).toHaveLength(0)
+  })
+
+  it('在线获取抛错时计入 errors 而非崩溃', async () => {
+    const dir = makeTempDir('publish-online-err-')
+    const indexPath = path.join(dir, 'index.json')
+    fs.writeFileSync(indexPath, JSON.stringify({ schema: 1, containerTag: 'resources', updatedAt: '', resources: {} }), 'utf8')
+    const sourcesRoot = path.join(dir, 'sources')
+    fs.mkdirSync(sourcesRoot)
+    fs.writeFileSync(
+      path.join(sourcesRoot, 'ffmpeg.json'),
+      JSON.stringify({ resourceId: 'ffmpeg', type: 'tool', upstream: { kind: 'online', provider: 'BtbN/FFmpeg-Builds' } }),
+      'utf8'
+    )
+    const fetchLocalPath = vi.fn(async () => {
+      throw new Error('网络抖动')
+    })
+    const gh = makeGhStub()
+
+    const summary = await publishFromManifest({
+      manifest: {
+        resources: {
+          ffmpeg: { version: 'master-20260827', ext: 'zip', assets: { 'win32-x64': null } }
+        }
+      },
+      sourcesRoot,
+      indexPath,
+      dryRun: false,
+      keep: 0,
+      ghClient: gh,
+      fetchLocalPath
+    })
+
+    expect(summary.errors).toHaveLength(1)
+    expect(summary.errors[0].message).toMatch(/网络抖动/)
+    expect(gh.uploadAsset).not.toHaveBeenCalled()
+  })
 })

@@ -4,8 +4,17 @@
   "priority": 10,
   "description": "FFprobe 多媒体探测二进制（共享，desktop/omni 装配）",
   "upstream": {
-    "kind": "manual",
-    "source": "GyanD/ffmpeg-builds",
-    "notes": "迁移源：apps/omni/build/presetResources/ffprobe。与 ffmpeg 同源发布，平台键对齐。"
+    "kind": "online",
+    "provider": "BtbN/FFmpeg-Builds",
+    "releaseApi": "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases/latest",
+    "downloadBase": "https://github.com/BtbN/FFmpeg-Builds/releases/download/latest",
+    "platforms": {
+      "win32-x64": "ffmpeg-master-latest-win64-gpl.zip",
+      "win32-arm64": "ffmpeg-master-latest-winarm64-gpl.zip",
+      "linux-x64": "ffmpeg-master-latest-linux64-gpl.tar.xz",
+      "linux-arm64": "ffmpeg-master-latest-linuxarm64-gpl.tar.xz"
+    },
+    "versionScheme": "master-YYYYMMDD（取 latest 构建日期，滚动内容不可变命名）",
+    "notes": "与 ffmpeg 同源发布（BtbN 归档同时含 ffprobe），平台键对齐。"
   }
 }

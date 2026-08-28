@@ -3,12 +3,18 @@
 /**
  * 发布脚本 CLI
  * 用法：
- *   node publish-resources.js --manifest <json> [--keep N] [--dry-run] [--repo owner/repo] [--tag resources]
+ *   node publish-resources.js --manifest <json> [--keep N] [--dry-run] [--repo owner/repo] [--tag resources] [--offline]
  *   node publish-resources.js --help
+ *
+ * 在线来源：manifest 中未提供 version 且 sources 声明 upstream.kind==='online' 的资源，
+ * 自动取上游最新构建日期作为版本（master-YYYYMMDD）；本地缺失平台资产时自动
+ * 从在线源下载并重打包（--offline 可关闭）。
  */
 
 const path = require('path')
-const { publishFromManifest } = require('./lib/publish')
+const fs = require('fs')
+const { publishFromManifest, readSourceInfo } = require('./lib/publish')
+const upstream = require('./lib/upstream')
 
 const args = process.argv.slice(2)
 
@@ -44,19 +50,51 @@ async function main() {
 可选：
   --keep N       保留资源历史版本数（默认不裁剪）
   --dry-run      只计算并更新清单摘要，不执行上传
+  --offline      禁用在线来源的自动下载/版本解析（本地缺失→计入 missing）
   --repo         资源仓库 owner/repo（默认 Leonard-Li777/firefly-resources）
   --tag          容器 tag（默认 resources）
 `)
     process.exit(opts.help ? 0 : 1)
   }
 
+  const sourcesRoot = path.resolve(__dirname, 'sources')
   const manifest = require(opts.manifest)
+  const offline = !!opts.offline
+
+  // 在线资源版本补齐：manifest 未提供 version 时取上游最新构建日期
+  for (const rid of Object.keys(manifest.resources)) {
+    const def = manifest.resources[rid]
+    if (def.version) continue
+    const source = readSourceInfo(sourcesRoot, rid)
+    if (source && source.upstream && source.upstream.kind === 'online' && !offline) {
+      def.version = await upstream.getBtbNMasterVersion()
+      console.log(`[publish] ${rid} 未指定 version，自动取在线来源：${def.version}`)
+    }
+  }
+
+  // 在线来源缺资产自动获取：BtbN 单二进制下载 → 提取 → 重打包 zip（raw/ 归档供 ffmpeg/ffprobe 复用）
+  const cacheRoot = path.resolve(__dirname, '.upstream-cache')
+  const fetchOnline = async ({ resourceId, source, platformKey, version }) => {
+    if (offline) return null
+    if (source.upstream.provider === 'BtbN/FFmpeg-Builds') {
+      const out = await upstream.fetchBtbNSingle({
+        resourceId,
+        version,
+        platformKey,
+        cacheDir: path.join(cacheRoot, 'shared')
+      })
+      return out
+    }
+    return null
+  }
+
   const summary = await publishFromManifest({
     manifest,
     repo: opts.repo || 'Leonard-Li777/firefly-resources',
     tag: opts.tag || 'resources',
     dryRun: !!opts.dryrun,
-    keep: Number(opts.keep) || 0
+    keep: Number(opts.keep) || 0,
+    fetchLocalPath: fetchOnline
   })
 
   const line = `上传 ${summary.uploaded.length}，幂等跳过 ${summary.skipped.length}，本地缺失 ${summary.missing.length}`
