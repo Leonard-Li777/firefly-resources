@@ -1,0 +1,11 @@
+{
+  "resourceId": "geo",
+  "type": "data",
+  "priority": 80,
+  "description": "反向地理编码词典（geonames-compact.json + VERSION，omni-geo）",
+  "upstream": {
+    "kind": "manual",
+    "source": "firefly-omni 构建产物",
+    "notes": "迁移源：apps/omni/build/presetResources/geo。无平台语义，default 键。"
+  }
+}

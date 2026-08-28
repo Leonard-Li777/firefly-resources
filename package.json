@@ -1,0 +1,18 @@
+{
+  "name": "firefly-resources",
+  "version": "0.1.0",
+  "private": true,
+  "description": "共享二进制资源统一分发仓库",
+  "scripts": {
+    "publish": "node publish-resources.js",
+    "verify": "node verify-release-resources.js",
+    "render": "node render-release-note.js",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  }
+}

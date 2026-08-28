@@ -1,0 +1,38 @@
+name: publish-resources
+
+on:
+  workflow_dispatch:
+    inputs:
+      resourceIds:
+        description: '逗号分隔的资源 ID（或 all）'
+        required: true
+        default: 'all'
+      version:
+        description: '可选：指定版本过滤（留空按 sources 默认）'
+        required: false
+        default: ''
+      keep:
+        description: '历史版本保留数（0=不裁剪）'
+        required: false
+        default: '0'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Publish resources
+        run: |
+          node publish-resources.js --upstream "${{ inputs.resourceIds }}" \
+            --version "${{ inputs.version }}" --keep "${{ inputs.keep }}" || true
+        shell: bash
+
+    # 说明：首版以"本地迁移发布"为主（开发机运行 node publish-resources.js --manifest ...）。
+    # --upstream 自动刷新模式待 sources 上游自动化就绪后接入；当前占位避免 CI 空转失败。
+    # 待办：publish-resources.js 增加 --upstream 分支，按 sources/<id>.json 的上游规则
+    #       自动下载/校验/上传，并把本 workflow 的 inputs 接入真实发布。

@@ -1,0 +1,21 @@
+{
+  "comment": "发布清单示例：platformKey → 本地归档文件路径。资产名按 {resourceId}-{version}[-{platform-arch}].{ext} 生成。",
+  "resources": {
+    "fastfetch": {
+      "version": "2.31.0",
+      "ext": "zip",
+      "assets": {
+        "win32-x64": "D:/local/archives/fastfetch-2.31.0-win32-x64.zip",
+        "linux-x64": "D:/local/archives/fastfetch-2.31.0-linux-x64.tar.gz"
+      }
+    },
+    "geo": {
+      "version": "2026.4",
+      "ext": "tar.gz",
+      "default": true,
+      "assets": {
+        "default": "D:/local/archives/geo-2026.4.tar.gz"
+      }
+    }
+  }
+}

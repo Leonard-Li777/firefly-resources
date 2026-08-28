@@ -1,0 +1,11 @@
+{
+  "resourceId": "ffmpeg",
+  "type": "tool",
+  "priority": 10,
+  "description": "FFmpeg 多媒体处理二进制（共享，desktop/omni 装配）",
+  "upstream": {
+    "kind": "manual",
+    "source": "GyanD/ffmpeg-builds",
+    "notes": "迁移源：apps/omni/build/presetResources/ffmpeg。更新时从 GyanD/ffmpeg-builds release 对应平台构建下载并二次压缩为 zip，保持 {resourceId}-{version}-{platform}-{arch}.zip 命名。win64→win32-x64，arm64→win32-arm64。"
+  }
+}

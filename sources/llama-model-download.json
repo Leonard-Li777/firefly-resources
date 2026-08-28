@@ -1,0 +1,11 @@
+{
+  "resourceId": "llama-model-download",
+  "type": "tool",
+  "priority": 50,
+  "description": "模型下载器（共享，desktop 装配）",
+  "upstream": {
+    "kind": "manual",
+    "source": "当前仓库自有构建产物",
+    "notes": "迁移源：apps/desktop/build/presetResources/llama-model-download。按平台键归档上传。"
+  }
+}

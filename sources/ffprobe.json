@@ -1,0 +1,11 @@
+{
+  "resourceId": "ffprobe",
+  "type": "tool",
+  "priority": 10,
+  "description": "FFprobe 多媒体探测二进制（共享，desktop/omni 装配）",
+  "upstream": {
+    "kind": "manual",
+    "source": "GyanD/ffmpeg-builds",
+    "notes": "迁移源：apps/omni/build/presetResources/ffprobe。与 ffmpeg 同源发布，平台键对齐。"
+  }
+}

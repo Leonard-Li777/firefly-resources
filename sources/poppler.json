@@ -1,0 +1,11 @@
+{
+  "resourceId": "poppler",
+  "type": "tool",
+  "priority": 30,
+  "description": "Poppler（pdftoppm/pdftotext 等，仅 Windows）",
+  "upstream": {
+    "kind": "manual",
+    "source": "oschwartz10612/poppler-windows-releases",
+    "notes": "迁移源：apps/desktop/build/presetResources/poppler。仅 win32 平台；latest 指向 release 最新版（Release-master-<ver>.zip）。"
+  }
+}

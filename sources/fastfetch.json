@@ -1,0 +1,11 @@
+{
+  "resourceId": "fastfetch",
+  "type": "tool",
+  "priority": 40,
+  "description": "fastfetch 系统信息采集（共享）",
+  "upstream": {
+    "kind": "manual",
+    "source": "fastfetch-cli/fastfetch releases",
+    "notes": "迁移源：apps/desktop/build/presetResources/fastfetch。平台命名如 fastfetch-<ver>-Windows.zip / -Linux / -macOS；映射到平台键后统一重命名。"
+  }
+}

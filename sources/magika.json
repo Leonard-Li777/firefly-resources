@@ -1,0 +1,11 @@
+{
+  "resourceId": "magika",
+  "type": "data",
+  "priority": 60,
+  "description": "magika 内容检测模型（onnx.model + model_type.onnx）",
+  "upstream": {
+    "kind": "manual",
+    "source": "google/magika",
+    "notes": "迁移源：apps/desktop/build/extraResources/models/magika。无平台语义，default 键；包内为同名根文件（onnx.model、model_type.onnx）。"
+  }
+}

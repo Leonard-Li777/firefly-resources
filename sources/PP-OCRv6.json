@@ -1,0 +1,11 @@
+{
+  "resourceId": "PP-OCRv6",
+  "type": "data",
+  "priority": 70,
+  "description": "PP-OCRv6 检测/识别 onnx（det/rec × tiny/small/medium + 词典）",
+  "upstream": {
+    "kind": "manual",
+    "source": "PaddleOCR 官方资产",
+    "notes": "迁移源：apps/desktop/build/extraResources/models/PP-OCRv6 等目录。无平台语义，default 键；压缩包内目录结构需与装配解压目标一致（model-path 约定见消费方装配配置）。"
+  }
+}

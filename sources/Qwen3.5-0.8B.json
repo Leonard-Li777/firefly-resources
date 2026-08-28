@@ -1,0 +1,11 @@
+{
+  "resourceId": "Qwen3.5-0.8B",
+  "type": "data",
+  "priority": 90,
+  "description": "内置默认分析模型 GGUF（Qwen3.5-0.8B 量化）",
+  "upstream": {
+    "kind": "manual",
+    "source": "HuggingFace 基座 + 自建量化",
+    "notes": "迁移源：apps/desktop/build/extraResources/models 下的 GGUF。无平台语义，default 键；单个 arch 文件较大（约 600MB），发布时留意容器 tag 资产大小限制。"
+  }
+}

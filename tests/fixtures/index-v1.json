@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "containerTag": "resources",
+  "updatedAt": "2026-08-28T00:00:00.000Z",
+  "resources": {
+    "ffmpeg": {
+      "type": "tool",
+      "latest": "7.1",
+      "versions": {
+        "7.1": {
+          "win32-x64": {
+            "name": "ffmpeg-7.1-win32-x64.zip",
+            "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "size": 100
+          },
+          "darwin-arm64": {
+            "name": "ffmpeg-7.1-darwin-arm64.zip",
+            "sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "size": 200
+          }
+        }
+      }
+    }
+  }
+}
