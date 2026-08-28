@@ -1,6 +1,40 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-08-28T00:00:00.000Z",
-  "resources": {}
+  "updatedAt": "2026-08-28T10:09:09.838Z",
+  "resources": {
+    "fastfetch": {
+      "type": "tool",
+      "latest": "2.62.0",
+      "versions": {
+        "2.62.0": {
+          "win32-x64": {
+            "name": "fastfetch-2.62.0-win32-x64.zip",
+            "sha256": "3381c3b208f9495e7c2954784e4340833e48bfbc1e448618c87d779cc7457378",
+            "size": 2908282
+          },
+          "linux-x64": {
+            "name": "fastfetch-2.62.0-linux-x64.zip",
+            "sha256": "48d2dedc4629949aa2cd8c74edb39e4aa84d9dd99fdda7cef983cf7af716a91e",
+            "size": 3848698
+          },
+          "linux-arm64": {
+            "name": "fastfetch-2.62.0-linux-arm64.zip",
+            "sha256": "75efa5c89a457b8b1aecbad22721cea666b6117dcb7ddf09af48320468dd36fa",
+            "size": 3699497
+          },
+          "darwin-x64": {
+            "name": "fastfetch-2.62.0-darwin-x64.zip",
+            "sha256": "ee6828009d6567124c78136383e2efed36bb8061f798911328beb05f9bb8936f",
+            "size": 592298
+          },
+          "darwin-arm64": {
+            "name": "fastfetch-2.62.0-darwin-arm64.zip",
+            "sha256": "7ca665dc67dd63f477304928d02695d02f42256c15d834036227aef74c118e94",
+            "size": 555164
+          }
+        }
+      }
+    }
+  }
 }
