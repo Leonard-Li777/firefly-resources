@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-08-28T13:43:19.365Z",
+  "updatedAt": "2026-08-28T15:07:15.536Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -112,26 +112,6 @@
       "latest": "master-20260827",
       "versions": {
         "master-20260827": {
-          "win32-x64": {
-            "name": "ffprobe-master-20260827-win32-x64.zip",
-            "sha256": "47828a4c2000043cc01f31cc679a01f1623adacc6cae01f7f1327cc5bbd27ae7",
-            "size": 55987464
-          },
-          "win32-arm64": {
-            "name": "ffprobe-master-20260827-win32-arm64.zip",
-            "sha256": "43c3357d1de4328c65e2a5d5a8a61eb45bd61f8d2724b3337853c2bb58be81bb",
-            "size": 37801119
-          },
-          "linux-x64": {
-            "name": "ffprobe-master-20260827-linux-x64.zip",
-            "sha256": "18bd8169532cdb4c342106026497f879308675968bd443f53179f2aaee93bda5",
-            "size": 56946649
-          },
-          "linux-arm64": {
-            "name": "ffprobe-master-20260827-linux-arm64.zip",
-            "sha256": "5c9ab5e77321a8e4a46979d9e8cafe51c6efbe8a2928e05faf8ff7d9418ef51a",
-            "size": 52133338
-          },
           "darwin-x64": {
             "name": "ffprobe-master-20260827-darwin-x64.zip",
             "sha256": "ae71e2ff0bb1ff24992bca55ae859da161270595d9fffa751c8f2ac6b820c7d0",
@@ -141,6 +121,72 @@
             "name": "ffprobe-master-20260827-darwin-arm64.zip",
             "sha256": "24e4a7b20620eb0d9e5f76d01affc0ec3e5f9ccb1837f19f448ae05e2c0988aa",
             "size": 8413006
+          },
+          "win32-x64": {
+            "name": "ffprobe-master-20260827-win32-x64.zip",
+            "sha256": "04940a8c3162f5783a29cd9940e3a1296e4f148fdaef2be45eac20e8077b4ac8",
+            "size": 55987464
+          },
+          "win32-arm64": {
+            "name": "ffprobe-master-20260827-win32-arm64.zip",
+            "sha256": "c226b22d471524f14e9f9a5f15031d31b4cc2585bf54ce325fa1add26aa0528f",
+            "size": 37801119
+          },
+          "linux-x64": {
+            "name": "ffprobe-master-20260827-linux-x64.zip",
+            "sha256": "cd02b9b74ec7de6f3c14c138a3b27ad6f8442a2723697a6c9959341e8512eb65",
+            "size": 56946649
+          },
+          "linux-arm64": {
+            "name": "ffprobe-master-20260827-linux-arm64.zip",
+            "sha256": "c5313669a5923a50831a167d27824531ed0b1f15d57a71c38ff3f63b55f35e5d",
+            "size": 52133338
+          }
+        }
+      }
+    },
+    "geo": {
+      "type": "data",
+      "latest": "20260825",
+      "versions": {
+        "20260825": {
+          "default": {
+            "name": "geo-20260825.tar.gz",
+            "sha256": "7c71064e7942a0391addd61ca3a313ac033a589fdfb6cf001a1e7c5e9abb5fb1",
+            "size": 8702416
+          }
+        }
+      }
+    },
+    "exiftool": {
+      "type": "tool",
+      "latest": "13.59",
+      "versions": {
+        "13.59": {
+          "win32-x64": {
+            "name": "exiftool-13.59-win32-x64.zip",
+            "sha256": "40eef5c309e16b6638ad7fbeb11b980bb882f98e39759407d15ae17d4882bd48",
+            "size": 10931900
+          },
+          "linux-x64": {
+            "name": "exiftool-13.59-linux-x64.zip",
+            "sha256": "4db676410f30648c979d10e4122461b792cc5f2dcd0eb9fb5c466edebe74ae1c",
+            "size": 6050468
+          },
+          "linux-arm64": {
+            "name": "exiftool-13.59-linux-arm64.zip",
+            "sha256": "4db676410f30648c979d10e4122461b792cc5f2dcd0eb9fb5c466edebe74ae1c",
+            "size": 6050468
+          },
+          "darwin-x64": {
+            "name": "exiftool-13.59-darwin-x64.zip",
+            "sha256": "4db676410f30648c979d10e4122461b792cc5f2dcd0eb9fb5c466edebe74ae1c",
+            "size": 6050468
+          },
+          "darwin-arm64": {
+            "name": "exiftool-13.59-darwin-arm64.zip",
+            "sha256": "4db676410f30648c979d10e4122461b792cc5f2dcd0eb9fb5c466edebe74ae1c",
+            "size": 6050468
           }
         }
       }

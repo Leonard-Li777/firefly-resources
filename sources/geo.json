@@ -1,11 +1,11 @@
 {
   "resourceId": "geo",
   "type": "data",
-  "priority": 80,
-  "description": "反向地理编码词典（geonames-compact.json + VERSION，omni-geo）",
+  "priority": 30,
+  "description": "GeoNames 地理数据集（omni-geo 离线反向地理编码）",
   "upstream": {
     "kind": "manual",
-    "source": "firefly-omni 构建产物",
-    "notes": "迁移源：apps/omni/build/presetResources/geo。无平台语义，default 键。"
+    "source": "自产数据：GeoNames cities500 裁剪版",
+    "notes": "迁移源：apps/omni/build/presetResources/geo/geonames-resources.tar.gz（内含 geonames-compact.json + VERSION）。跨平台数据，无平台语义，发布使用 default 平台键。VERSION=YYYYMMDD 滚动版本。"
   }
 }

@@ -2,10 +2,10 @@
   "resourceId": "exiftool",
   "type": "tool",
   "priority": 20,
-  "description": "ExifTool 元数据提取（共享，desktop/omni 装配）",
+  "description": "exiftool 元数据工具（共享，omni 装配）",
   "upstream": {
     "kind": "manual",
-    "source": "exiftool/exiftool releases",
-    "notes": "迁移源：apps/omni/build/presetResources/exiftool。官方发布为 tar.gz/zip，平台键：darwin→mac build、win32→Windows executable pack。"
+    "source": "exiftool 官方 Perl 发行版（含运行时）",
+    "notes": "迁移源：apps/omni/build/presetResources/exiftool。平台命名 exiftool-bin-{win|mac|linux}-x64/arm64.zip；mac 与 darwin 为重复平台，统一映射到 darwin。"
   }
 }

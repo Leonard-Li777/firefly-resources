@@ -73,4 +73,25 @@ describe('upstream（BtbN 在线来源）', () => {
     expect(listing.status).toBe(0)
     expect(listing.stdout.trim()).toBe('ffmpeg.exe')
   })
+
+  it('fetchBtbNSingle 输出 zip 已存在时幂等复用（不重复重打包）', async () => {
+    const dir = makeTempDir('uppid-')
+    const extract = path.join(dir, 'extract-win32-x64', 'bin')
+    fs.mkdirSync(extract, { recursive: true })
+    fs.writeFileSync(path.join(extract, 'ffprobe.exe'), 'exe-body', 'utf8')
+    const outZip = path.join(dir, 'ffprobe-master-20260827-win32-x64.zip')
+    fs.writeFileSync(outZip, 'pre-existing-zip', 'utf8')
+    const dep = { downloadFile: vi.fn() }
+    const first = await fetchBtbNSingle(
+      { resourceId: 'ffprobe', version: 'master-20260827', platformKey: 'win32-x64', cacheDir: dir },
+      dep
+    )
+    expect(first).toBe(outZip)
+    const retried = await fetchBtbNSingle(
+      { resourceId: 'ffprobe', version: 'master-20260827', platformKey: 'win32-x64', cacheDir: dir },
+      dep
+    )
+    expect(retried).toBe(outZip)
+    expect(fs.readFileSync(outZip, 'utf8')).toBe('pre-existing-zip')
+  })
 })
