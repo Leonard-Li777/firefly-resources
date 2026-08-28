@@ -53,15 +53,16 @@ async function main() {
     console.log(`[verify] index sha256：${result.indexSha256}`)
     if (result.ok) {
       console.log('[verify] ✓ 装配清单与资源索引一致')
-      process.exit(0)
+      // 用 exitCode 而非 process.exit()，避免 Node 在 Windows 上对悬垂 fetch handle 的退出竞争
+      process.exitCode = 0
     } else {
       for (const e of result.errors) console.error(`  ✗ ${e}`)
       console.error('[verify] ✗ 校验未通过，中断发版')
-      process.exit(1)
+      process.exitCode = 1
     }
   } catch (e) {
     console.error(`[verify] 失败：${e.message}`)
-    process.exit(1)
+    process.exitCode = 1
   }
 }
 
