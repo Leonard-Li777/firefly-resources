@@ -21,9 +21,10 @@ function parseArgs(argv) {
       continue
     }
     const m = a.match(/^--([\w-]+)(?:=(.*))?$/)
-    if (!m || typeof argv[i + 1] === 'undefined') throw new Error(`参数解析失败：${a}`)
+    if (!m) throw new Error(`参数解析失败：${a}`)
     const key = m[1].replace(/-/g, '')
-    out[key] = m[2] || argv[++i]
+    const next = argv[i + 1]
+    out[key] = m[2] || (typeof next === 'string' && !next.startsWith('--') ? argv[++i] : true)
     if (out[key] === 'true') out[key] = true
     if (out[key] === 'false') out[key] = false
   }
