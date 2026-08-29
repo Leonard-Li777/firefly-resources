@@ -97,4 +97,52 @@ describe('verify（发版前置校验）', () => {
     expect(result.ok).toBe(true)
     expect(result.indexSha256).toBe(sha256Text(serverText))
   })
+
+  it('schema v1 对象映射：resources/engines 结构放行并识别 upstream', async () => {
+    const idx = writeTempIndex()
+    const bom = writeBom({
+      indexSha256: idx.sha,
+      resources: {
+        ffmpeg: {
+          version: '7.1',
+          source: 'shared',
+          asset: {
+            name: 'ffmpeg-7.1-win32-x64.zip',
+            sha256: 'a'.repeat(64),
+            size: 1024,
+            url: 'https://example.com/ffmpeg-7.1-win32-x64.zip'
+          }
+        }
+      },
+      engines: {
+        'llama.cpp': { version: 'b10582', source: 'upstream', files: [{ name: 'llama-b10582-bin-win-cpu-x64.zip', size: 1 }] }
+      }
+    })
+    const result = await verifyBom({ bomPath: bom, indexPath: idx.p })
+    expect(result.ok).toBe(true)
+    expect(result.resources).toHaveLength(2)
+    const shared = result.resources.find(r => r.resourceId === 'ffmpeg')
+    const eng = result.resources.find(r => r.resourceId === 'llama.cpp')
+    expect(shared.mode).toBe('index')
+    expect(shared.ok).toBe(true)
+    expect(eng.mode).toBe('upstream')
+    expect(eng.name).toContain('1 个文件')
+  })
+
+  it('schema v1 对象映射：资产 sha 不符 → 拦截', async () => {
+    const idx = writeTempIndex()
+    const bom = writeBom({
+      indexSha256: idx.sha,
+      resources: {
+        ffmpeg: {
+          version: '7.1',
+          source: 'shared',
+          asset: { name: 'ffmpeg-7.1-win32-x64.zip', sha256: 'f'.repeat(64) }
+        }
+      }
+    })
+    const result = await verifyBom({ bomPath: bom, indexPath: idx.p })
+    expect(result.ok).toBe(false)
+    expect(result.errors.some(e => e.includes('ffmpeg'))).toBe(true)
+  })
 })
