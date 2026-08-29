@@ -1,0 +1,11 @@
+{
+  "resourceId": "LFM2.5-1.2B-Instruct",
+  "type": "data",
+  "priority": 95,
+  "description": "内置默认分析模型 GGUF（LFM2.5 1.2B Instruct DSpark Q4_K_M）",
+  "upstream": {
+    "kind": "manual",
+    "source": "HuggingFace LiquidAI 基座 + DSpark 蒸馏版",
+    "notes": "迁移源：apps/desktop/build/extraResources/models/hub。无平台语义，default 键；zip 内含 hub/ 前缀，解压至 models/ 下与磁盘目录结构对齐。"
+  }
+}

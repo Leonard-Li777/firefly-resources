@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "purpose": "内置模型迁移：LFM2.5 1.2B Instruct（DSpark Q4_K_M）hub 目录整体上传",
+  "resources": {
+    "LFM2.5-1.2B-Instruct": {
+      "version": "20260829",
+      "ext": "zip",
+      "assets": {
+        "default": {
+          "path": "C:/Users/lilun/AppData/Local/Temp/opencode/LFM2.5-1.2B-Instruct-20260829-default.zip",
+          "ext": "zip"
+        }
+      }
+    }
+  }
+}
