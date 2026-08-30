@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-08-30T00:12:32.631Z",
+  "updatedAt": "2026-08-30T17:10:50.953Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -228,6 +228,39 @@
             "name": "libmupdf-20260830-linux-arm64.tar.gz",
             "sha256": "8a4afac6eb7ecba6de596abc465603b3e2e8a4b6804333d95b09c4c3c41ff753",
             "size": 36843867
+          }
+        }
+      }
+    },
+    "firefly-omni": {
+      "type": "engine",
+      "latest": "v0.1.0",
+      "versions": {
+        "v0.1.0": {
+          "linux-arm64": {
+            "name": "firefly-omni-v0.1.0-linux-arm64.tar.gz",
+            "sha256": "c7cc9f66ff25dae43fef946d42d1e45784bd46a0149682e0ab3a3cdef4b28826",
+            "size": 55508720
+          },
+          "linux-x64": {
+            "name": "firefly-omni-v0.1.0-linux-x64.tar.gz",
+            "sha256": "7acb99402d9899ed98ae53fc1afa2ec63068fbf9a2311f94ee88dc667a366e05",
+            "size": 56487338
+          },
+          "darwin-arm64": {
+            "name": "firefly-omni-v0.1.0-darwin-arm64.tar.gz",
+            "sha256": "60137c5ef8eb51240c5bd74dfb28cab0b162b68db7c8cb42150608210aec4030",
+            "size": 51771361
+          },
+          "darwin-x64": {
+            "name": "firefly-omni-v0.1.0-darwin-x64.tar.gz",
+            "sha256": "50d4b7fa58158f69d913e83e1ef11e006437c4eb614ea6f4a091d0d6172e1741",
+            "size": 54287063
+          },
+          "win32-x64": {
+            "name": "firefly-omni-v0.1.0-win32-x64.zip",
+            "sha256": "7d0abc716877640a6a2ebf7a662f9bb2307ec4777078dc9c62a299222d54c603",
+            "size": 50919062
           }
         }
       }
