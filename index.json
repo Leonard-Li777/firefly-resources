@@ -231,19 +231,6 @@
           }
         }
       }
-    },
-    "firefly-omni": {
-      "type": "engine",
-      "latest": "v0.1.0",
-      "versions": {
-        "v0.1.0": {
-          "win32-x64": {
-            "name": "firefly-omni-v0.1.0-win32-x64.zip",
-            "sha256": "bdbfa084f2ccbc71e40b3fa073d41d0ab8fa3ae5f27153d6a96051c2f723c3ef",
-            "size": 51832484
-          }
-        }
-      }
     }
   }
 }
