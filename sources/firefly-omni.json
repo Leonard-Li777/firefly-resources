@@ -1,0 +1,19 @@
+{
+  "resourceId": "firefly-omni",
+  "type": "engine",
+  "priority": 92,
+  "description": "Firefly Omni 本地高性能引擎二进制（重查重/清理/Magika 识别，desktop 以 OmniService 内置随包分发）",
+  "upstream": {
+    "kind": "online",
+    "provider": "firefly-omni-release",
+    "repo": "Leonard-Li777/firefly-omni",
+    "assetMap": {
+      "win32-x64": "firefly-omni-windows-x86_64.zip",
+      "darwin-x64": "firefly-omni-macos-x86_64.tar.gz",
+      "darwin-arm64": "firefly-omni-macos-aarch64.tar.gz",
+      "linux-x64": "firefly-omni-linux-x86_64.tar.gz",
+      "linux-arm64": "firefly-omni-linux-aarch64.tar.gz"
+    },
+    "notes": "主进入路径：本地生产构建（pnpm omni:build:desktop:release → node scripts/omni-publish-to-firefly-resources.js）产出 Pro 二进制并真实归档到本 index/api；CE 通道备用 —— omni-build.yml（CE）发布到 firefly-omni 的 v* Release 后，可用同 provider 以 version 定位 tag 自动拉取。desktop 装配链路（download-preset-resources.js → setup-extra-resources.js）当前直连 firefly-ai-folder，统一 index 归档后可作为追溯来源。"
+  }
+}

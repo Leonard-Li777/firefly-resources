@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-08-29T11:12:57.555Z",
+  "updatedAt": "2026-08-30T00:12:32.631Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -200,6 +200,47 @@
             "name": "LFM2.5-1.2B-Instruct-20260829.zip",
             "sha256": "c2e6c596d891f6e434bc3ae2a94bf4a503ea1ee99fd7cc9384547ae232b997d0",
             "size": 171346186
+          }
+        }
+      }
+    },
+    "libmupdf": {
+      "type": "library",
+      "latest": "20260830",
+      "versions": {
+        "20260830": {
+          "win32-x64": {
+            "name": "libmupdf-20260830-win32-x64.zip",
+            "sha256": "d5fac22acddd438baa3e623109503a879c464934038e8ed1fc96a41040e50ce6",
+            "size": 270632211
+          },
+          "darwin-universal": {
+            "name": "libmupdf-20260830-darwin-universal.tar.gz",
+            "sha256": "71665045d29bb3c978b856e1442dfbda530115426f1485946469512f28676cc3",
+            "size": 72274948
+          },
+          "linux-x64": {
+            "name": "libmupdf-20260830-linux-x64.tar.gz",
+            "sha256": "74a0670d86de771c7e98a498a6d8b251a506a0734c6e3ac2a8b3ded320f45db8",
+            "size": 36794551
+          },
+          "linux-arm64": {
+            "name": "libmupdf-20260830-linux-arm64.tar.gz",
+            "sha256": "8a4afac6eb7ecba6de596abc465603b3e2e8a4b6804333d95b09c4c3c41ff753",
+            "size": 36843867
+          }
+        }
+      }
+    },
+    "firefly-omni": {
+      "type": "engine",
+      "latest": "v0.1.0",
+      "versions": {
+        "v0.1.0": {
+          "win32-x64": {
+            "name": "firefly-omni-v0.1.0-win32-x64.zip",
+            "sha256": "bdbfa084f2ccbc71e40b3fa073d41d0ab8fa3ae5f27153d6a96051c2f723c3ef",
+            "size": 51832484
           }
         }
       }

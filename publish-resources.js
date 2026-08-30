@@ -13,6 +13,7 @@
 
 const path = require('path')
 const fs = require('fs')
+const { spawnSync } = require('child_process')
 const { publishFromManifest, readSourceInfo } = require('./lib/publish')
 const upstream = require('./lib/upstream')
 
@@ -72,11 +73,45 @@ async function main() {
     }
   }
 
-  // 在线来源缺资产自动获取：BtbN 单二进制下载 → 提取 → 重打包 zip（raw/ 归档供 ffmpeg/ffprobe 复用）
+  // 在线来源缺资产自动获取：BtbN 单二进制下载 → 提取 → 重打包 zip（raw/ 归档供 ffmpeg/ffprobe 复用）；
+  // firefly-omni 系列（libmupdf / firefly-omni）经 gh CLI 从上游 Release 原样拉取后重命名归档。
   const cacheRoot = path.resolve(__dirname, '.upstream-cache')
+
+  /**
+   * 经 gh CLI 下载上游 Release 资产到本地缓存（幂等：目标存在即命中）
+   * @param {object} opts
+   * @returns {string} 本地缓存文件路径
+   */
+  function fetchUpstreamGhAsset({ repo, tag, assetName, cacheDir }) {
+    fs.mkdirSync(cacheDir, { recursive: true })
+    const dest = path.join(cacheDir, assetName)
+    if (fs.existsSync(dest) && fs.statSync(dest).size > 0) return dest
+    const res = spawnSync(
+      'gh',
+      ['release', 'download', tag, '--repo', repo, '--pattern', assetName, '--dir', cacheDir, '--clobber'],
+      { encoding: 'utf8', stdio: 'pipe' }
+    )
+    if (res.status !== 0) {
+      throw new Error(`gh release download 失败（${repo} ${tag} ${assetName}）：${(res.stderr || '').trim()}`)
+    }
+    return dest
+  }
+
   const fetchOnline = async ({ resourceId, source, platformKey, version }) => {
     if (offline) return null
-    if (source.upstream.provider === 'BtbN/FFmpeg-Builds') {
+    const provider = source && source.upstream && source.upstream.provider
+    if (provider === 'firefly-omni-ci-resources' || provider === 'firefly-omni-release') {
+      const assetName = source.upstream.assetMap[platformKey]
+      if (!assetName) return null
+      const tag = source.upstream.tag || version
+      return fetchUpstreamGhAsset({
+        repo: source.upstream.repo,
+        tag,
+        assetName,
+        cacheDir: path.join(cacheRoot, resourceId)
+      })
+    }
+    if (provider === 'BtbN/FFmpeg-Builds') {
       const out = await upstream.fetchBtbNSingle({
         resourceId,
         version,

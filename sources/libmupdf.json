@@ -1,0 +1,19 @@
+{
+  "resourceId": "libmupdf",
+  "type": "library",
+  "priority": 90,
+  "description": "MuPDF 预编译静态库（omni 构建期依赖：*.a / *.lib + include/）",
+  "upstream": {
+    "kind": "online",
+    "provider": "firefly-omni-ci-resources",
+    "repo": "Leonard-Li777/firefly-omni",
+    "tag": "ci-resources",
+    "assetMap": {
+      "win32-x64": "libmupdf-windows-x86_64.zip",
+      "darwin-universal": "libmupdf-macos-universal.tar.gz",
+      "linux-x64": "libmupdf-linux-x86_64.tar.gz",
+      "linux-arm64": "libmupdf-linux-aarch64.tar.gz"
+    },
+    "notes": "上游资产由 omni-libmupdf-build.yml 手工触发编译并上传；发布时经 firefly-resources 统一 index 挂账并重命名归档（leb: libmupdf-<version>-<platformKey>.<ext>），消费侧按平台键命中下载。"
+  }
+}

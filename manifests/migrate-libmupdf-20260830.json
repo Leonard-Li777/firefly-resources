@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "purpose": "统一资源归档：MuPDF 预编译静态库（firefly-omni:ci-resources → firefly-resources index），资产由上游 provider 在线拉取",
+  "resources": {
+    "libmupdf": {
+      "version": "20260830",
+      "ext": "tar.gz",
+      "assets": {
+        "win32-x64": { "ext": "zip" },
+        "darwin-universal": { "ext": "tar.gz" },
+        "linux-x64": { "ext": "tar.gz" },
+        "linux-arm64": { "ext": "tar.gz" }
+      }
+    }
+  }
+}
