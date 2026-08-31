@@ -49,6 +49,7 @@ async function main() {
   --manifest     发布清单（resources: id → {version, ext, assets{platformKey: 本地文件路径}}）
 
 可选：
+  --force        强制覆盖模式（允许覆写已存在版本资产与更新 sha256）
   --keep N       保留资源历史版本数（默认不裁剪）
   --dry-run      只计算并更新清单摘要，不执行上传
   --offline      禁用在线来源的自动下载/版本解析（本地缺失→计入 missing）
@@ -128,6 +129,7 @@ async function main() {
     repo: opts.repo || 'Leonard-Li777/firefly-resources',
     tag: opts.tag || 'resources',
     dryRun: !!opts.dryrun,
+    force: !!opts.force,
     keep: Number(opts.keep) || 0,
     fetchLocalPath: fetchOnline
   })
