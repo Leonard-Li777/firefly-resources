@@ -158,6 +158,32 @@
         }
       }
     },
+    "magika": {
+      "type": "data",
+      "latest": "1.0",
+      "versions": {
+        "1.0": {
+          "default": {
+            "name": "magika-resources.zip",
+            "sha256": "15c794093504618097b63a3fc837fdd141401b2a4e928e2bf0d82923b82f3ee3",
+            "size": 3211197
+          }
+        }
+      }
+    },
+    "PP-OCRv6": {
+      "type": "data",
+      "latest": "v6",
+      "versions": {
+        "v6": {
+          "default": {
+            "name": "ppocrv6-resources.zip",
+            "sha256": "1acc7cab32448ce4e2e8dd294951442cc80e3b61bb1e0b4a68579df6d119c55f",
+            "size": 37586355
+          }
+        }
+      }
+    },
     "exiftool": {
       "type": "tool",
       "latest": "13.59",
@@ -191,15 +217,15 @@
         }
       }
     },
-    "LFM2.5-1.2B-Instruct": {
+    "LFM2.5-1.2B-Instruct-GGUF": {
       "type": "data",
-      "latest": "20260829",
+      "latest": "Q4_K_M",
       "versions": {
-        "20260829": {
+        "Q4_K_M": {
           "default": {
-            "name": "LFM2.5-1.2B-Instruct-20260829.zip",
-            "sha256": "c2e6c596d891f6e434bc3ae2a94bf4a503ea1ee99fd7cc9384547ae232b997d0",
-            "size": 171346186
+            "name": "LFM2.5-1.2B-Instruct-GGUF--Q4_K_M.zip",
+            "sha256": "2902a813b175c48b9d77259c4ebb16e21f7567fc74316d2f27641c8c7ead3d1e",
+            "size": 730895438
           }
         }
       }
