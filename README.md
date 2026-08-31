@@ -13,7 +13,7 @@
 ├── verify-release-resources.js  # 消费方发版前置校验（装配清单 ↔ 索引一致性）
 ├── render-release-note.js # 装配清单 → Release 说明"配套资源"区块
 ├── sources/*.json         # 各资源的上游获取规则（provider / assetMap / 压缩格式）
-├── manifests/             # 发布清单审计归档（omni-<version>.json 等）
+├── manifests/             # 发布/聚合清单审计归档（仅存可复现清单，如 omni-<version>.json、libmupdf 在线归档；不含开发机本地路径的一次性迁移清单）
 ├── lib/                   # 共享基础库（命名/索引/哈希/gh 封装/upstream/fetch）
 └── tests/unit/            # Vitest 单元测试
 ```
