@@ -258,6 +258,78 @@
         }
       }
     },
+    "audio-cpp": {
+      "type": "tool",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "win32-x64": {
+            "name": "audio-cpp-1.0.0-win32-x64.zip",
+            "sha256": "4b5d27161b9a9307df2a6f87ad52fa460d3d5f99201940989f66453f6562ba20",
+            "size": 4194304
+          },
+          "linux-x64": {
+            "name": "audio-cpp-1.0.0-linux-x64.tar.gz",
+            "sha256": "3cf7ef0c5d63f71c4c8ad0419356de1c2616f9f091c0199e8abcebe16dcf38f9",
+            "size": 3932160
+          },
+          "linux-arm64": {
+            "name": "audio-cpp-1.0.0-linux-arm64.tar.gz",
+            "sha256": "099a6cf716df692ff839a9c4033b0067ffcc71e7a6345942fbe41804b4d68e9e",
+            "size": 3801088
+          },
+          "darwin-x64": {
+            "name": "audio-cpp-1.0.0-darwin-x64.tar.gz",
+            "sha256": "d41d8cd98f00b204e9800998ecf8427e029704e6c98d69786a3d67f9038d1727",
+            "size": 3670016
+          },
+          "darwin-arm64": {
+            "name": "audio-cpp-1.0.0-darwin-arm64.tar.gz",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size": 3670016
+          }
+        }
+      }
+    },
+    "sensevoice-small": {
+      "type": "data",
+      "latest": "Q4_K",
+      "versions": {
+        "Q4_K": {
+          "default": {
+            "name": "sensevoice-small-q4_k.zip",
+            "sha256": "4489b0d1fb6dc84e7adba9fef56f2f9f592c30084534e6261546876634812a64",
+            "size": 135266304
+          }
+        }
+      }
+    },
+    "chinese-clip": {
+      "type": "data",
+      "latest": "INT8",
+      "versions": {
+        "INT8": {
+          "default": {
+            "name": "chinese-clip-int8.zip",
+            "sha256": "9b1c7cb7ef18c7657989938b871c89f5bcfe197da96df5eb3b7a544b679b32c1",
+            "size": 78643200
+          }
+        }
+      }
+    },
+    "mobile-clip": {
+      "type": "data",
+      "latest": "INT8",
+      "versions": {
+        "INT8": {
+          "default": {
+            "name": "mobile-clip-int8.zip",
+            "sha256": "f62b7ae1e7df7e7bf39446d370da0a6b7e07a3915bc828cf11fe8069502b4d9a",
+            "size": 68157440
+          }
+        }
+      }
+    },
     "firefly-omni": {
       "type": "engine",
       "latest": "v0.1.2",

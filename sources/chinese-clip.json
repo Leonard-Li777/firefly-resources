@@ -1,0 +1,11 @@
+{
+  "resourceId": "chinese-clip",
+  "type": "data",
+  "priority": 85,
+  "description": "Chinese-CLIP ViT-B-16 INT8 ONNX 视觉特征提取模型与 1500 词向量库 (~75MB)",
+  "upstream": {
+    "kind": "manual",
+    "source": "OFA-Sys/Chinese-CLIP",
+    "notes": "解压至 extraResources/models/clip"
+  }
+}

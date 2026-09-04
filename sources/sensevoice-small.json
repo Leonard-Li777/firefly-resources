@@ -1,0 +1,11 @@
+{
+  "resourceId": "sensevoice-small",
+  "type": "data",
+  "priority": 85,
+  "description": "SenseVoice-Small Q4_K GGUF 极速端侧音频转录模型 (~129MB)",
+  "upstream": {
+    "kind": "manual",
+    "source": "FunAudioLLM / HuggingFace GGUF",
+    "notes": "解压至 extraResources/models/sensevoice"
+  }
+}

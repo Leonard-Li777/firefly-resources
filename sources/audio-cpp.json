@@ -1,0 +1,11 @@
+{
+  "resourceId": "audio-cpp",
+  "type": "tool",
+  "priority": 60,
+  "description": "audio.cpp 原生音频转录可执行工具（纯 CPU，支持 SenseVoice-Small GGUF 推理）",
+  "upstream": {
+    "kind": "manual",
+    "source": "0xShug0/audio.cpp",
+    "notes": "解压至 extraResources/bin/audio-cpp"
+  }
+}

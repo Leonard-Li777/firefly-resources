@@ -1,0 +1,11 @@
+{
+  "resourceId": "mobile-clip",
+  "type": "data",
+  "priority": 85,
+  "description": "MobileCLIP-B INT8 ONNX 国际版轻量视觉特征提取模型与 1500 词向量库 (~65MB)",
+  "upstream": {
+    "kind": "manual",
+    "source": "Apple / MobileCLIP",
+    "notes": "解压至 extraResources/models/clip"
+  }
+}
