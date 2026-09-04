@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-08-31T23:05:31.547Z",
+  "updatedAt": "2026-09-04T20:33:56.848Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -265,8 +265,8 @@
         "1.0.0": {
           "win32-x64": {
             "name": "audio-cpp-1.0.0-win32-x64.zip",
-            "sha256": "4b5d27161b9a9307df2a6f87ad52fa460d3d5f99201940989f66453f6562ba20",
-            "size": 4194304
+            "sha256": "6dc63164bce8102bc4d9a04df2dde049f7ccae1196e8bea57f3e1d4f13f3ba09",
+            "size": 28629090
           },
           "linux-x64": {
             "name": "audio-cpp-1.0.0-linux-x64.tar.gz",
@@ -298,8 +298,8 @@
         "Q4_K": {
           "default": {
             "name": "sensevoice-small-q4_k.zip",
-            "sha256": "4489b0d1fb6dc84e7adba9fef56f2f9f592c30084534e6261546876634812a64",
-            "size": 135266304
+            "sha256": "7fa17c566c2dbd5137f62c9e4ea496d33cfc4bef3b80ae96762956cdf2e03e57",
+            "size": 141659711
           }
         }
       }
@@ -311,8 +311,8 @@
         "INT8": {
           "default": {
             "name": "chinese-clip-int8.zip",
-            "sha256": "9b1c7cb7ef18c7657989938b871c89f5bcfe197da96df5eb3b7a544b679b32c1",
-            "size": 78643200
+            "sha256": "1c53fa47168d9794e175d7672ba1bf03d67ae1aad141943594e972842980ae36",
+            "size": 13414817
           }
         }
       }
@@ -324,8 +324,8 @@
         "INT8": {
           "default": {
             "name": "mobile-clip-int8.zip",
-            "sha256": "f62b7ae1e7df7e7bf39446d370da0a6b7e07a3915bc828cf11fe8069502b4d9a",
-            "size": 68157440
+            "sha256": "415e84d2f86a78ea34aedd971eb1baa5e44c1f530f442a77fd823e31eec707ad",
+            "size": 10556419
           }
         }
       }
@@ -413,6 +413,19 @@
             "name": "firefly-omni-v0.1.2-win32-x64.zip",
             "sha256": "2ac8f165e16a454f3eacbb4810956e5524277ace1e758db9a5c320ed03e652f3",
             "size": 31804070
+          }
+        }
+      }
+    },
+    "nsfw-tiny": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "nsfw-tiny-1.0.0.zip",
+            "sha256": "ad6542687e942650a2b51e2e16c28983b54128ac68343574ccbb98ce07c4c002",
+            "size": 2145177
           }
         }
       }

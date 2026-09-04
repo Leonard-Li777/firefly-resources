@@ -1,0 +1,11 @@
+{
+  "resourceId": "nsfw-tiny",
+  "type": "data",
+  "priority": 86,
+  "description": "NSFW-Tiny 轻量内容尺度检测 ONNX 模型 (~2.2MB)",
+  "upstream": {
+    "kind": "manual",
+    "source": "GantMan/nsfw_model",
+    "notes": "解压至 extraResources/models/nsfw"
+  }
+}
