@@ -311,7 +311,7 @@
         "INT8": {
           "default": {
             "name": "chinese-clip-int8.zip",
-            "sha256": "9d52eddf582b629f3ae94d6ca18be27d2f8dfe0dc8fcc0a972c52ef598cda11e",
+            "sha256": "49d60fc27dd3d323aeb5be2969a36ff7b946e94841eb77d1a430eb135e1f0082",
             "size": 60477434
           }
         }
