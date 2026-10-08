@@ -1,9 +1,20 @@
 # firefly-resources
 
-共享二进制资源统一分发仓库（Open-Core）。
+共享二进制资源统一分发仓库（**闭源私有仓库**：所有 release 资产与 `index.json` 均需授权访问，匿名请求一律 404）。
 
 - 决策依据：`docs/adr/0029-unified-resource-distribution.md`（monorepo 侧）
 - 实现方案：`docs/developer/infra/unified-resource-distribution.md`（monorepo 侧）
+
+## 访问认证（私有仓库）
+
+- **token 解析顺序**：`GH_TOKEN` → `GITHUB_TOKEN` → 本地 `gh auth token`（`lib/auth.js` / 各消费脚本内置同序逻辑）。
+- **索引拉取**：`raw.githubusercontent.com/.../index.json` 需带 `Authorization: token <PAT>`。
+- **资产下载**：`github.com/<repo>/releases/download/...` 域名**不认** API token（带 token 亦 404），
+  消费方须走 API 两步：`GET /repos/<repo>/releases/tags/<tag>` 查 asset id →
+  `GET /repos/<repo>/releases/assets/<id>`（`Accept: application/octet-stream`，跟随 302）。
+- **CI**：GitHub Actions 默认 `github.token` 对本仓库无权限，须注入长期 PAT
+  （`UNISOURCE_RELEASE_TOKEN` / `PRO_SUBMODULE_TOKEN` / `PRIVATE_MONOREPO_PAT` / `PAT` / `GH_PAT` 链）。
+- 无 token 时仅当仓库为公开态才可匿名访问（转私有前的过渡兼容）。
 
 ## 结构
 
@@ -63,7 +74,7 @@ node render-release-note.js --bom ../apps/desktop/build/extraResources/configs/r
   2. 组装多平台 manifest 写入 `manifests/omni-<version>.json`；
   3. 调 `publish-resources.js --manifest` 上传 `resources` tag 并回写本地 `index.json`；
   4. 提交并推送 `main`（需 secret `UNISOURCE_RELEASE_TOKEN`）。
-- 消费端 `scripts/download-preset-resources.js` 3.4.7 从本仓库 `main/index.json` 按平台键解析并下载装配。
+- 消费端 `scripts/consume-preset-resources.js` 从本仓库 `main/index.json` 按平台键解析并下载装配（私有仓库：经 `lib/resource-consumer.js` 认证拉取/下载）。
 - 本地手动发布可复用 `publish-unisource.js`（`--dry-run` / `--fr <本仓库目录>` 调试）。
 
 ## 测试

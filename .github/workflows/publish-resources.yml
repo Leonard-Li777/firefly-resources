@@ -31,6 +31,9 @@ jobs:
           node publish-resources.js --upstream "${{ inputs.resourceIds }}" \
             --version "${{ inputs.version }}" --keep "${{ inputs.keep }}" || true
         shell: bash
+        env:
+          # 仓库已转私有：gh CLI 需显式 token（优先长期 PAT，回退 Actions 默认 token——对本仓库仍有写权限）
+          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
     # 说明：首版以"本地迁移发布"为主（开发机运行 node publish-resources.js --manifest ...）。
     # --upstream 自动刷新模式待 sources 上游自动化就绪后接入；当前占位避免 CI 空转失败。
