@@ -429,6 +429,71 @@
           }
         }
       }
+    },
+    "onnxruntime-directml": {
+      "type": "tool",
+      "latest": "1.28.0",
+      "versions": {
+        "1.28.0": {
+          "win32-x64": {
+            "name": "onnxruntime-directml-1.28.0-win32-x64.zip",
+            "sha256": "0d6a85cf3debed559499a9a270a45709decba9d9d60c7ee6d477615c89dd2ded",
+            "size": 9954659
+          }
+        }
+      }
+    },
+    "silero-vad": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "silero-vad-1.0.0.zip",
+            "sha256": "a40394c96b744161c603ed969f38886335d60ddf8672ff6cf7fb09c26726eca2",
+            "size": 508216
+          }
+        }
+      }
+    },
+    "gtcrn": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "gtcrn-1.0.0.zip",
+            "sha256": "23b0bd2f1b4120ea4437de5380e8dbb12066b91a6bd00606f70b39076fb9b7a6",
+            "size": 128180
+          }
+        }
+      }
+    },
+    "ced-mini": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "ced-mini-1.0.0.zip",
+            "sha256": "42620b4fd123a1c7c5d3b4746d9c5f1d23648def69b2d8f7eefed1c245da9f8d",
+            "size": 36144348
+          }
+        }
+      }
+    },
+    "sensevoice-onnx": {
+      "type": "data",
+      "latest": "int8",
+      "versions": {
+        "int8": {
+          "default": {
+            "name": "sensevoice-onnx-int8.zip",
+            "sha256": "3a1a137071c80200748ddbe323628e36d10b58382150d9ac1ba04907a8030c14",
+            "size": 160304482
+          }
+        }
+      }
     }
   }
 }

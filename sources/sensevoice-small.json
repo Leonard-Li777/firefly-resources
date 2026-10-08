@@ -2,6 +2,8 @@
   "resourceId": "sensevoice-small",
   "type": "data",
   "priority": 85,
+  "deprecated": true,
+  "deprecationReason": "Issue #738: SenseVoice-Small GGUF 模型已下架，由 sensevoice-onnx (int8 ONNX + tokens) 接替",
   "description": "SenseVoice-Small Q4_K GGUF 极速端侧音频转录模型 (~129MB)",
   "upstream": {
     "kind": "manual",

@@ -1,0 +1,12 @@
+{
+  "resourceId": "gtcrn",
+  "type": "data",
+  "priority": 85,
+  "description": "GTCRN 深度学习语音降噪与增强模型 (gtcrn_simple.onnx ~10MB)",
+  "upstream": {
+    "kind": "online",
+    "provider": "k2-fsa/sherpa-onnx (GTCRN Speech Enhancement)",
+    "modelUrl": "https://github.com/k2-fsa/sherpa-onnx/releases/download/speech-enhancement-models/gtcrn_simple.onnx",
+    "notes": "解压至 extraResources/models/audio/denoise"
+  }
+}

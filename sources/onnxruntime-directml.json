@@ -1,0 +1,13 @@
+{
+  "resourceId": "onnxruntime-directml",
+  "type": "tool",
+  "priority": 55,
+  "description": "ONNX Runtime DirectML 版动态库（onnxruntime.dll + DirectML.dll），供 sherpa-onnx 等 ONNX 推理运行时动态加载",
+  "upstream": {
+    "kind": "online",
+    "provider": "k2-fsa/sherpa-onnx (ORT 1.28.2)",
+    "packageUrl": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-v1.13.8-win-x64-shared-MT-Release-lib.tar.bz2",
+    "extract": "lib/{onnxruntime.dll,onnxruntime_providers_shared.dll,sherpa-onnx-c-api.dll}",
+    "notes": "解压至 extraResources/bin/onnx（含 onnxruntime.dll、sherpa-onnx-c-api.dll 与 DirectML.dll）"
+  }
+}

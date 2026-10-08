@@ -1,0 +1,13 @@
+{
+  "resourceId": "sensevoice-onnx",
+  "type": "data",
+  "priority": 85,
+  "description": "SenseVoice int8 ONNX 端侧音频转录模型（model.int8.onnx ~115MB + tokens.txt）",
+  "upstream": {
+    "kind": "online",
+    "provider": "k2-fsa/sherpa-onnx (SenseVoice)",
+    "modelUrl": "https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/resolve/main/model.int8.onnx",
+    "tokensUrl": "https://huggingface.co/csukuangfj/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-2024-07-17/resolve/main/tokens.txt",
+    "notes": "解压至 extraResources/models/audio/sensevoice"
+  }
+}
