@@ -1,0 +1,12 @@
+{
+  "resourceId": "embeddinggemma-2-onnx",
+  "type": "data",
+  "priority": 85,
+  "description": "Google EmbeddingGemma-2 ONNX 多模态端侧嵌入模型 (~285MB, 文本塔 + 视觉塔 + 分词器)",
+  "upstream": {
+    "kind": "online",
+    "provider": "onnx-community/embeddinggemma-2-ONNX",
+    "packageUrl": "https://huggingface.co/onnx-community/embeddinggemma-2-ONNX",
+    "notes": "解压至 extraResources/models/gemma"
+  }
+}
