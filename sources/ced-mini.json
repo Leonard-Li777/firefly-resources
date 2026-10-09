@@ -7,7 +7,7 @@
     "kind": "online",
     "provider": "k2-fsa/sherpa-onnx (CED-mini Audio Tagging)",
     "packageUrl": "https://github.com/k2-fsa/sherpa-onnx/releases/download/audio-tagging-models/sherpa-onnx-ced-mini-audio-tagging-2024-04-19.tar.bz2",
-    "extract": "sherpa-onnx-ced-mini-audio-tagging-2024-04-19/model.int8.onnx -> ced_mini.onnx",
+    "extract": "sherpa-onnx-ced-mini-audio-tagging-2024-04-19/model.int8.onnx -> ced_mini.onnx, class_labels_indices.csv",
     "notes": "解压至 extraResources/models/audio/ced"
   }
 }
