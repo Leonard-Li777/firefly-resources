@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-10-09T00:40:46.437Z",
+  "updatedAt": "2026-10-13T10:10:46.231Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -311,8 +311,8 @@
         "INT8": {
           "default": {
             "name": "chinese-clip-int8.zip",
-            "sha256": "2610e723337a3d647bfcad3668ad6fa8a0bb924f0643be86d5f7ccf33c3dc0a7",
-            "size": 69232783
+            "sha256": "27bfdc1dc24cec2d2ae010c29e4369960b45e4f960df8a1b792b78ffe3625b98",
+            "size": 69236381
           }
         }
       }
@@ -504,6 +504,19 @@
             "name": "embeddinggemma-2-onnx-1.0.0.zip",
             "sha256": "833defb0a72fd6ee94eb28cebf0347f89569bd716ece2028f52e896c92a54716",
             "size": 254002885
+          }
+        }
+      }
+    },
+    "kokoro-multi-lang": {
+      "type": "data",
+      "latest": "1.1.0",
+      "versions": {
+        "1.1.0": {
+          "default": {
+            "name": "kokoro-multi-lang-1.1.0.zip",
+            "sha256": "e03a14c1bb971f25c141d677f226249757dd75c21e0f8757397b3e60043049a6",
+            "size": 235887428
           }
         }
       }
