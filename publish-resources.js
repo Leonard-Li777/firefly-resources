@@ -75,7 +75,8 @@ async function main() {
   }
 
   // 在线来源缺资产自动获取：BtbN 单二进制下载 → 提取 → 重打包 zip（raw/ 归档供 ffmpeg/ffprobe 复用）；
-  // firefly-omni 系列（libmupdf / firefly-omni）经 gh CLI 从上游 Release 原样拉取后重命名归档。
+  // firefly-omni 系列（libmupdf / firefly-omni）与通用 github-release provider（如 llama-model-download）
+  // 经 gh CLI 从上游 Release 原样拉取后按 assetMap 归档。
   const cacheRoot = path.resolve(__dirname, '.upstream-cache')
 
   /**
@@ -101,7 +102,7 @@ async function main() {
   const fetchOnline = async ({ resourceId, source, platformKey, version }) => {
     if (offline) return null
     const provider = source && source.upstream && source.upstream.provider
-    if (provider === 'firefly-omni-ci-resources' || provider === 'firefly-omni-release') {
+    if (provider === 'firefly-omni-ci-resources' || provider === 'firefly-omni-release' || provider === 'github-release') {
       const assetName = source.upstream.assetMap[platformKey]
       if (!assetName) return null
       const tag = source.upstream.tag || version

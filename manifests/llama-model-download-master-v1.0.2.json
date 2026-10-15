@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "purpose": "llama-model-download 跟随上游 Leonard-Li777/llama.cpp fork master-v1.0.2 release 更新（5 平台；资产经 github-release provider 在线拉取，本地缓存命中）",
+  "resources": {
+    "llama-model-download": {
+      "version": "master-v1.0.2",
+      "ext": "tar.gz",
+      "assets": {
+        "win32-x64": { "ext": "zip" },
+        "darwin-x64": { "ext": "tar.gz" },
+        "darwin-arm64": { "ext": "tar.gz" },
+        "linux-x64": { "ext": "tar.gz" },
+        "linux-arm64": { "ext": "tar.gz" }
+      }
+    }
+  }
+}

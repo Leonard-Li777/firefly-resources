@@ -42,7 +42,7 @@
 | ---------------- | ------- | ------------------------------ | ------------------------------------------------ |
 | ffmpeg / ffprobe | tool    | `BtbN/FFmpeg-Builds`           | 多媒体处理，按平台架构拆分                       |
 | fastfetch        | tool    | 本地 manifest / 在线           | 系统信息                                         |
-| llama-model-download | tool | 本地 manifest / BtbN           | 模型下载器                                       |
+| llama-model-download | tool | `Leonard-Li777/llama.cpp`      | 模型下载器（fork master 自动构建，tag `master-v*`） |
 | exiftool         | tool    | 本地 manifest                  | 元数据提取                                       |
 | geo              | data    | 本地 manifest                  | geonames-compact（omni-geo）                     |
 | LFM2.5-1.2B-Instruct | data | 本地发布                     | 内置默认分析模型 GGUF                            |
