@@ -4,10 +4,10 @@
  * 发版前置校验 CLI（消费方 Release 创建前执行）
  * 用法：
  *   node verify-release-resources.js --bom <path> --index-local <index.json>
- *   node verify-release-resources.js --bom <path> --repo Leonard-Li777/firefly-resources
+ *   node verify-release-resources.js --bom <path> --repo Leonard-Li777/firefly-resources [--branch <分支>]
  */
 
-const { verifyBom } = require('./lib/verify')
+const { verifyBom, DEFAULT_BRANCH } = require('./lib/verify')
 
 const args = process.argv.slice(2)
 
@@ -36,16 +36,20 @@ async function main() {
 必填：
   --bom          装配清单 resources.bom.json 路径
   --index-local  本地索引文件路径（离线校验）
-  --repo         远程资源仓库 owner/repo（拉取 main 分支索引）
+  --repo         远程资源仓库 owner/repo（拉取远端索引）
+
+可选：
+  --branch       远程索引分支（缺省 ${DEFAULT_BRANCH}，即资源仓当前工作分支）
 `)
-    process.exit(opts.help ? 0 : 1)
+      process.exit(opts.help ? 0 : 1)
   }
 
   try {
     const result = await verifyBom({
       bomPath: opts.bom,
       indexPath: opts.indexlocal || undefined,
-      remoteRepo: opts.repo || undefined
+      remoteRepo: opts.repo || undefined,
+      branch: opts.branch || undefined
     })
     for (const c of result.resources) {
       console.log(`  ${c.mode === 'upstream' ? '⭮' : c.ok ? '✓' : '✗'} ${c.resourceId} ${c.version} ${c.name}`)
