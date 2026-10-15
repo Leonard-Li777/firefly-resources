@@ -4,8 +4,16 @@
   "priority": 50,
   "description": "模型下载器（共享，desktop 装配）",
   "upstream": {
-    "kind": "local",
-    "source": "当前仓库自有构建产物",
-    "notes": "迁移源：apps/desktop/build/presetResources/llama-model-download。该资源无任何下载来源，仅支持本地直接上传（发布时 assets 必须提供本地归档路径）。"
+    "kind": "online",
+    "provider": "github-release",
+    "repo": "Leonard-Li777/llama.cpp",
+    "assetMap": {
+      "win32-x64": "llama-model-download-win32-x64.zip",
+      "darwin-x64": "llama-model-download-darwin-x64.tar.gz",
+      "darwin-arm64": "llama-model-download-darwin-arm64.tar.gz",
+      "linux-x64": "llama-model-download-linux-x64.tar.gz",
+      "linux-arm64": "llama-model-download-linux-arm64.tar.gz"
+    },
+    "notes": "上游为 Leonard-Li777/llama.cpp fork 的 master 分支自动构建发布（auto-tag-llama-model-download.yml + llama-model-download.yml 两个 workflow）；tag 形如 master-v<X.Y.Z>，随 master 推送自增 patch。发布时以 version 定位 tag，经 assetMap 用 gh CLI 原样拉取上游资产并缓存到 .upstream-cache/llama-model-download/，再按 {resourceId}-{version}-{platformKey}.{ext} 重命名归档进本 index。历史 1.0.0 迁移自同仓旧 tag llama-model-download-v1.0.0（2026-05-22）。上游无 win32-arm64 构建，消费侧不期待该平台键。"
   }
 }
