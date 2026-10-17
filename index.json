@@ -357,6 +357,19 @@
         }
       }
     },
+    "bekko-a8m": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "bekko-a8m-1.0.0.zip",
+            "sha256": "54bf07b6a1d1ec98d394e42042716f82f9471027007ae41560f6bf1a7c893b99",
+            "size": 106269288
+          }
+        }
+      }
+    },
     "firefly-omni": {
       "type": "engine",
       "latest": "v0.1.8",
