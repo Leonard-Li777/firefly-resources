@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-10-15T07:38:19.826Z",
+  "updatedAt": "2026-10-25T02:57:07.893Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -333,13 +333,32 @@
     },
     "chinese-clip": {
       "type": "data",
-      "latest": "INT8",
+      "latest": "INT8-v2",
       "versions": {
         "INT8": {
           "default": {
             "name": "chinese-clip-int8.zip",
             "sha256": "3cbf43ada28be28ef4ba27ebf35796aba369f103518a5acf465e32aefd3a36af",
             "size": 69298991
+          }
+        },
+        "INT8-v2": {
+          "default": {
+            "name": "chinese-clip-int8-v2.zip",
+            "sha256": "7dd258bd556bde3f99980655ba15fdc92f162b7fb9bf3078f95b79af0e0cdb36",
+            "size": 203157415,
+            "files": [
+              {
+                "name": "cn_clip_text.onnx",
+                "size": 153221930,
+                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
+              },
+              {
+                "name": "cn_clip_vocab.txt",
+                "size": 109540,
+                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+              }
+            ]
           }
         }
       }
@@ -351,8 +370,8 @@
         "INT8": {
           "default": {
             "name": "mobile-clip-int8.zip",
-            "sha256": "415e84d2f86a78ea34aedd971eb1baa5e44c1f530f442a77fd823e31eec707ad",
-            "size": 10556419
+            "sha256": "a236176147ad695655d2d54c810f925d574620689299b713484018b7dd8a910c",
+            "size": 57910236
           }
         }
       }
@@ -364,7 +383,7 @@
         "1.0.0": {
           "default": {
             "name": "bekko-a8m-1.0.0.zip",
-            "sha256": "54bf07b6a1d1ec98d394e42042716f82f9471027007ae41560f6bf1a7c893b99",
+            "sha256": "315c4cba94333207522ae6e12c5de234199d1c4fc11740b05ac32aebd3e82d13",
             "size": 106269288
           }
         }
@@ -572,7 +591,7 @@
         "1.0.0": {
           "default": {
             "name": "nsfw-tiny-1.0.0.zip",
-            "sha256": "ad6542687e942650a2b51e2e16c28983b54128ac68343574ccbb98ce07c4c002",
+            "sha256": "013884f9bb69f53b76eb3d4f7af9f8251582261716cd7d4d1ee3f8738330f086",
             "size": 2145177
           }
         }
@@ -580,8 +599,15 @@
     },
     "onnxruntime-directml": {
       "type": "tool",
-      "latest": "1.28.0",
+      "latest": "1.24.4",
       "versions": {
+        "1.24.4": {
+          "win32-x64": {
+            "name": "onnxruntime-directml-1.24.4-win32-x64.zip",
+            "sha256": "a988bde5acda3f488ce2f29b6634d25a40e5a6ed50f665cc945e96db1b9456be",
+            "size": 16033436
+          }
+        },
         "1.28.0": {
           "win32-x64": {
             "name": "onnxruntime-directml-1.28.0-win32-x64.zip",
@@ -598,7 +624,7 @@
         "1.0.0": {
           "default": {
             "name": "silero-vad-1.0.0.zip",
-            "sha256": "a40394c96b744161c603ed969f38886335d60ddf8672ff6cf7fb09c26726eca2",
+            "sha256": "3e0855fdf917dc71a1422c4fadb6c67a7b215d3baade8c729f51e9e3b87b58df",
             "size": 508216
           }
         }
@@ -611,7 +637,7 @@
         "1.0.0": {
           "default": {
             "name": "gtcrn-1.0.0.zip",
-            "sha256": "23b0bd2f1b4120ea4437de5380e8dbb12066b91a6bd00606f70b39076fb9b7a6",
+            "sha256": "1aa9b1dbc30d08f17a2315153a8e5e6fb56ba3e0cd6572d9a1bf59357390bec0",
             "size": 128180
           }
         }
@@ -637,7 +663,7 @@
         "int8": {
           "default": {
             "name": "sensevoice-onnx-int8.zip",
-            "sha256": "3a1a137071c80200748ddbe323628e36d10b58382150d9ac1ba04907a8030c14",
+            "sha256": "a5cd6e2836c3916e18efb2ee81bd6fd536c92bf957fd29a524b8a7e82c6cdceb",
             "size": 160304482
           }
         }
@@ -650,21 +676,21 @@
         "1.0.0": {
           "default": {
             "name": "embeddinggemma-2-onnx-1.0.0.zip",
-            "sha256": "833defb0a72fd6ee94eb28cebf0347f89569bd716ece2028f52e896c92a54716",
-            "size": 254002885
+            "sha256": "f2cfc8643f708702c3abeeb5130df42becb909793d5ade429531daf810314f26",
+            "size": 254003864
           }
         }
       }
     },
-    "kokoro-multi-lang": {
-      "type": "data",
-      "latest": "1.1.0",
+    "sherpa-onnx-runtime": {
+      "type": "tool",
+      "latest": "1.13.8",
       "versions": {
-        "1.1.0": {
-          "default": {
-            "name": "kokoro-multi-lang-1.1.0.zip",
-            "sha256": "e03a14c1bb971f25c141d677f226249757dd75c21e0f8757397b3e60043049a6",
-            "size": 235887428
+        "1.13.8": {
+          "win32-x64": {
+            "name": "sherpa-onnx-runtime-1.13.8-win32-x64.zip",
+            "sha256": "3cb751f7e27d9c0768687487335d67bee3dd9694b6825e50ee439ade7cb6bd04",
+            "size": 8282676
           }
         }
       }
