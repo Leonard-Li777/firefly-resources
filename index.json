@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-10-25T02:57:07.893Z",
+  "updatedAt": "2026-10-26T21:54:07.156Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -691,6 +691,19 @@
             "name": "sherpa-onnx-runtime-1.13.8-win32-x64.zip",
             "sha256": "3cb751f7e27d9c0768687487335d67bee3dd9694b6825e50ee439ade7cb6bd04",
             "size": 8282676
+          }
+        }
+      }
+    },
+    "moss-tts": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "moss-tts-1.0.0.zip",
+            "sha256": "4374fe73fd27e9544674037890e773826727b959c6a63313989d787a263b7069",
+            "size": 240822786
           }
         }
       }

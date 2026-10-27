@@ -1,0 +1,11 @@
+{
+  "resourceId": "moss-tts",
+  "type": "data",
+  "priority": 85,
+  "description": "MOSS-TTS 48kHz RVQ-16 端侧离线语音合成模型族与 51 预置音色库 (moss_tts_*.onnx + codec + preset_voices.bin ~286MB)",
+  "upstream": {
+    "kind": "custom",
+    "provider": "MOSS-TTS (OpenNLPLab)",
+    "notes": "解压至 extraResources/models/audio/moss"
+  }
+}
