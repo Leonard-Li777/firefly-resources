@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-10-26T21:54:07.156Z",
+  "updatedAt": "2026-10-29T06:48:24.524Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -743,6 +743,31 @@
             "name": "moss-tts-1.0.0.zip",
             "sha256": "4374fe73fd27e9544674037890e773826727b959c6a63313989d787a263b7069",
             "size": 240822786
+          }
+        }
+      }
+    },
+    "ram-assets": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "ram-assets-1.0.0.zip",
+            "sha256": "885a7fe3db7125ab9b2380aaca32b33e6d97bb93f69e3b12d20562edc555e393",
+            "size": 5779538,
+            "files": [
+              {
+                "name": "ram_tag_embeddings.bin",
+                "size": 9390080,
+                "sha256": "6846ff8b6d069e1f7d497ad6b272b0c0d9e4c3344f9efc258dac8f35c9579304"
+              },
+              {
+                "name": "ram_pan_projection.json",
+                "size": 806955,
+                "sha256": "d0387bc5b4db930bac670634853aa1d9138ed0d261dd04981383abb2772a9b8b"
+              }
+            ]
           }
         }
       }
