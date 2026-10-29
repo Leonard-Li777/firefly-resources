@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-10-29T06:48:24.524Z",
+  "updatedAt": "2026-10-29T18:30:28.464Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -754,18 +754,18 @@
         "1.0.0": {
           "default": {
             "name": "ram-assets-1.0.0.zip",
-            "sha256": "885a7fe3db7125ab9b2380aaca32b33e6d97bb93f69e3b12d20562edc555e393",
-            "size": 5779538,
+            "sha256": "aa6f5f47391a9ee30d3cfcb42029b449fb03496d8161ee9102cb2f5df6c1859b",
+            "size": 8972400,
             "files": [
               {
                 "name": "ram_tag_embeddings.bin",
                 "size": 9390080,
-                "sha256": "6846ff8b6d069e1f7d497ad6b272b0c0d9e4c3344f9efc258dac8f35c9579304"
+                "sha256": "8c0ef9a0e8ceb99687e9cee8953b271f42e2297f400ba9331b9057e43d8d7f8b"
               },
               {
                 "name": "ram_pan_projection.json",
-                "size": 806955,
-                "sha256": "d0387bc5b4db930bac670634853aa1d9138ed0d261dd04981383abb2772a9b8b"
+                "size": 805740,
+                "sha256": "3e418e7d7d13f5baee77e3db3eb2d11b78eb8ee08b93a408aa0e3145520c6747"
               }
             ]
           }
