@@ -771,6 +771,19 @@
           }
         }
       }
+    },
+    "nsfw-l3": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "nsfw-l3-1.0.0.zip",
+            "sha256": "84383b64d723d31ec3ab940522f866ff1979a24454269cd6336ee2fc98ff2ddf",
+            "size": 21966375
+          }
+        }
+      }
     }
   }
 }
