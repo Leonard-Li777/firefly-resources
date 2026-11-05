@@ -1,8 +1,8 @@
 {
-  "resourceId": "nsfw-tiny",
+  "resourceId": "nsfw-mobilenet-v2",
   "type": "data",
   "priority": 86,
-  "description": "NSFW-Tiny 轻量内容尺度检测 ONNX 模型 (~2.2MB)",
+  "description": "NSFW-MobileNet-V2 端侧内容尺度检测 ONNX 模型 (~9.85MB)",
   "upstream": {
     "kind": "manual",
     "source": "GantMan/nsfw_model",

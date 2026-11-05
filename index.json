@@ -623,15 +623,15 @@
         }
       }
     },
-    "nsfw-tiny": {
+    "nsfw-mobilenet-v2": {
       "type": "data",
       "latest": "1.0.0",
       "versions": {
         "1.0.0": {
           "default": {
-            "name": "nsfw-tiny-1.0.0.zip",
-            "sha256": "013884f9bb69f53b76eb3d4f7af9f8251582261716cd7d4d1ee3f8738330f086",
-            "size": 2145177
+            "name": "nsfw-mobilenet-v2-1.0.0.zip",
+            "sha256": "c88e9903b4478121f0dc118935c1f01633ecdbca75501865a9526e0388d1d8ef",
+            "size": 10328474
           }
         }
       }
