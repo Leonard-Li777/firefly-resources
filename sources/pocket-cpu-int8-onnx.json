@@ -1,0 +1,12 @@
+{
+  "resourceId": "pocket-cpu-int8-onnx",
+  "type": "data",
+  "priority": 90,
+  "description": "liodon-ai/MNN-Pocket-0.3B-ONNX 轻量 CPU 生成式大模型 (~363MB, INT8 静态量化, 纯 CPU 极速推理)",
+  "upstream": {
+    "kind": "online",
+    "provider": "liodon-ai/MNN-Pocket-0.3B-ONNX",
+    "packageUrl": "https://huggingface.co/liodon-ai/MNN-Pocket-0.3B-ONNX",
+    "notes": "解压至 extraResources/models/pocket-cpu"
+  }
+}
