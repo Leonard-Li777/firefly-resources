@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-11-09T09:02:26.000Z",
+  "updatedAt": "2026-11-10T20:05:46.837Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -805,6 +805,19 @@
                 "sha256": "3acc19e1869c8a1915bfc1435fac935aad6d9a78bab92d7a5bad2ae216a9fc3f"
               }
             ]
+          }
+        }
+      }
+    },
+    "nsfw-mobilenetv2": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "nsfw-mobilenetv2-1.0.0.zip",
+            "sha256": "af66beb688c2d05574cd32d72bd55169acd381bdbeb2b97deb016827ad6c6af1",
+            "size": 9556862
           }
         }
       }
