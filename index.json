@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-11-10T20:05:46.837Z",
+  "updatedAt": "2026-11-12T14:48:44.715Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -805,6 +805,19 @@
             "name": "nsfw-mobilenetv2-1.0.0.zip",
             "sha256": "af66beb688c2d05574cd32d72bd55169acd381bdbeb2b97deb016827ad6c6af1",
             "size": 9556862
+          }
+        }
+      }
+    },
+    "pocket-cpu-int8-onnx": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "pocket-cpu-int8-onnx-1.0.0.zip",
+            "sha256": "cde1aca83d8a22061a185891b49867896096f9b0c45bd3fef86dcc40402811c7",
+            "size": 250572161
           }
         }
       }
