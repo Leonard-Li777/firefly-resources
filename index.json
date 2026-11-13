@@ -305,116 +305,6 @@
         }
       }
     },
-    "sensevoice-small": {
-      "type": "data",
-      "latest": "Q4_K",
-      "versions": {
-        "Q4_K": {
-          "default": {
-            "name": "sensevoice-small-q4_k.zip",
-            "sha256": "7fa17c566c2dbd5137f62c9e4ea496d33cfc4bef3b80ae96762956cdf2e03e57",
-            "size": 141659711
-          }
-        }
-      }
-    },
-    "chinese-clip": {
-      "type": "data",
-      "latest": "INT8-v3",
-      "versions": {
-        "INT8": {
-          "default": {
-            "name": "chinese-clip-int8.zip",
-            "sha256": "3cbf43ada28be28ef4ba27ebf35796aba369f103518a5acf465e32aefd3a36af",
-            "size": 69298991
-          }
-        },
-        "INT8-v2": {
-          "default": {
-            "name": "chinese-clip-int8-v2.zip",
-            "sha256": "7dd258bd556bde3f99980655ba15fdc92f162b7fb9bf3078f95b79af0e0cdb36",
-            "size": 203157415,
-            "files": [
-              {
-                "name": "cn_clip_text.onnx",
-                "size": 153221930,
-                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
-              },
-              {
-                "name": "cn_clip_vocab.txt",
-                "size": 109540,
-                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
-              }
-            ]
-          }
-        },
-        "INT8-v3": {
-          "default": {
-            "name": "chinese-clip-int8-v3.zip",
-            "sha256": "67a5e4a0d0985085a3ad9e153efa5d4817af3851b6c4c7c8933b5c0a83ca3093",
-            "size": 212925967,
-            "files": [
-              {
-                "name": "cn_clip_text.onnx",
-                "size": 153221930,
-                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
-              },
-              {
-                "name": "cn_clip_vocab.txt",
-                "size": 109540,
-                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
-              },
-              {
-                "name": "tags_visual_gemma_512.bin",
-                "size": 307200,
-                "sha256": "b71efdcbf333dead0210c8ce7c2ad677cce5be2c548e7a168706c5ec79f55149"
-              },
-              {
-                "name": "tags_visual_gemma_512.meta.json",
-                "size": 5016,
-                "sha256": "78b22ae8763dd7c23ae3fe686a049464cd5398479987bf852fff7ecc56731f1a"
-              },
-              {
-                "name": "omw_concepts_gemma_512.bin",
-                "size": 21131264,
-                "sha256": "f464f96580fcbbc7589bc134171087f2070ca3419dd659a57d366a4844573938"
-              },
-              {
-                "name": "omw_concepts_gemma_512.meta.json",
-                "size": 1151708,
-                "sha256": "7280a2184675533b28135e6cd80d8ca71c2db32a928b6ff04d390b5c71483155"
-              }
-            ]
-          }
-        }
-      }
-    },
-    "mobile-clip": {
-      "type": "data",
-      "latest": "INT8",
-      "versions": {
-        "INT8": {
-          "default": {
-            "name": "mobile-clip-int8.zip",
-            "sha256": "a236176147ad695655d2d54c810f925d574620689299b713484018b7dd8a910c",
-            "size": 57910236
-          }
-        }
-      }
-    },
-    "bekko-a8m": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "bekko-a8m-1.0.0.zip",
-            "sha256": "315c4cba94333207522ae6e12c5de234199d1c4fc11740b05ac32aebd3e82d13",
-            "size": 106269288
-          }
-        }
-      }
-    },
     "firefly-omni": {
       "type": "engine",
       "latest": "v0.1.8",
@@ -610,19 +500,6 @@
         }
       }
     },
-    "nsfw-mobilenet-v2": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "nsfw-mobilenet-v2-1.0.0.zip",
-            "sha256": "c88e9903b4478121f0dc118935c1f01633ecdbca75501865a9526e0388d1d8ef",
-            "size": 10328474
-          }
-        }
-      }
-    },
     "onnxruntime-directml": {
       "type": "tool",
       "latest": "1.24.4",
@@ -682,58 +559,6 @@
         }
       }
     },
-    "sensevoice-onnx": {
-      "type": "data",
-      "latest": "int8",
-      "versions": {
-        "int8": {
-          "default": {
-            "name": "sensevoice-onnx-int8.zip",
-            "sha256": "a5cd6e2836c3916e18efb2ee81bd6fd536c92bf957fd29a524b8a7e82c6cdceb",
-            "size": 160304482
-          }
-        }
-      }
-    },
-    "embeddinggemma-2-onnx": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "embeddinggemma-2-onnx-1.0.0.zip",
-            "sha256": "f2cfc8643f708702c3abeeb5130df42becb909793d5ade429531daf810314f26",
-            "size": 254003864
-          }
-        }
-      }
-    },
-    "m5-tts": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "m5-tts-1.0.0.zip",
-            "sha256": "814b190f671e32a7e19add7655b032145ef96fc560f3326466042b5b4d96c240",
-            "size": 305845248
-          }
-        }
-      }
-    },
-    "moss-tts": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "moss-tts-1.0.0.zip",
-            "sha256": "4374fe73fd27e9544674037890e773826727b959c6a63313989d787a263b7069",
-            "size": 240822786
-          }
-        }
-      }
-    },
     "ram-assets": {
       "type": "data",
       "latest": "1.0.0",
@@ -759,7 +584,156 @@
         }
       }
     },
-    "nsfw-l3": {
+    "391b9a03": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "emb-391b9a03-1.0.0.zip",
+            "sha256": "f2cfc8643f708702c3abeeb5130df42becb909793d5ade429531daf810314f26",
+            "size": 254003864
+          }
+        }
+      },
+      "keyEpoch": 1
+    },
+    "a70ec85a": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "emb-a70ec85a-1.0.0.zip",
+            "sha256": "315c4cba94333207522ae6e12c5de234199d1c4fc11740b05ac32aebd3e82d13",
+            "size": 106269288
+          }
+        }
+      },
+      "keyEpoch": 1
+    },
+    "a42b0c8f": {
+      "type": "data",
+      "latest": "INT8-v3",
+      "versions": {
+        "INT8": {
+          "default": {
+            "name": "chinese-clip-int8.zip",
+            "sha256": "3cbf43ada28be28ef4ba27ebf35796aba369f103518a5acf465e32aefd3a36af",
+            "size": 69298991
+          }
+        },
+        "INT8-v2": {
+          "default": {
+            "name": "chinese-clip-int8-v2.zip",
+            "sha256": "7dd258bd556bde3f99980655ba15fdc92f162b7fb9bf3078f95b79af0e0cdb36",
+            "size": 203157415,
+            "files": [
+              {
+                "name": "cn_clip_text.onnx",
+                "size": 153221930,
+                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
+              },
+              {
+                "name": "cn_clip_vocab.txt",
+                "size": 109540,
+                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
+              }
+            ]
+          }
+        },
+        "INT8-v3": {
+          "default": {
+            "name": "emb-a42b0c8f-3.0.0.zip",
+            "sha256": "67a5e4a0d0985085a3ad9e153efa5d4817af3851b6c4c7c8933b5c0a83ca3093",
+            "size": 212925967
+          }
+        }
+      },
+      "keyEpoch": 1
+    },
+    "a892a600": {
+      "type": "data",
+      "latest": "INT8",
+      "versions": {
+        "INT8": {
+          "default": {
+            "name": "emb-a892a600-1.0.0.zip",
+            "sha256": "a236176147ad695655d2d54c810f925d574620689299b713484018b7dd8a910c",
+            "size": 57910236
+          }
+        }
+      },
+      "keyEpoch": 1
+    },
+    "485c04b7": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "cpu-485c04b7-1.0.0.zip",
+            "sha256": "cde1aca83d8a22061a185891b49867896096f9b0c45bd3fef86dcc40402811c7",
+            "size": 250572161
+          }
+        }
+      },
+      "keyEpoch": 1
+    },
+    "f3b8224c": {
+      "type": "data",
+      "latest": "int8",
+      "versions": {
+        "int8": {
+          "default": {
+            "name": "asr-f3b8224c-1.0.0.zip",
+            "sha256": "a5cd6e2836c3916e18efb2ee81bd6fd536c92bf957fd29a524b8a7e82c6cdceb",
+            "size": 160304482
+          }
+        }
+      }
+    },
+    "8a04293a": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "tts-8a04293a-1.0.0.zip",
+            "sha256": "4374fe73fd27e9544674037890e773826727b959c6a63313989d787a263b7069",
+            "size": 240822786
+          }
+        }
+      }
+    },
+    "e43ab9e3": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "tts-e43ab9e3-1.0.0.zip",
+            "sha256": "814b190f671e32a7e19add7655b032145ef96fc560f3326466042b5b4d96c240",
+            "size": 305845248
+          }
+        }
+      }
+    },
+    "d1a5b4e4": {
+      "type": "data",
+      "latest": "1.0.0",
+      "versions": {
+        "1.0.0": {
+          "default": {
+            "name": "nsfw-d1a5b4e4-1.0.0.zip",
+            "sha256": "af66beb688c2d05574cd32d72bd55169acd381bdbeb2b97deb016827ad6c6af1",
+            "size": 9556862
+          }
+        }
+      },
+      "keyEpoch": 1
+    },
+    "71e9aaa6": {
       "type": "data",
       "latest": "1.2.0",
       "versions": {
@@ -772,55 +746,13 @@
         },
         "1.2.0": {
           "default": {
-            "name": "nsfw-l3-1.2.0.zip",
+            "name": "nsfw-71e9aaa6-1.2.0.zip",
             "sha256": "929e5e074783194c8af976cab37b9dff43c2dfddb6626ee2041e2517c3cc443f",
-            "size": 33311367,
-            "files": [
-              {
-                "name": "model_manifest.json",
-                "size": 21393,
-                "sha256": "df72fead2463ae124599d020e253bf08ee8f9a2fbddd8ba5bff71be1ce7f7a38"
-              },
-              {
-                "name": "nsfw_l3_int8.onnx",
-                "size": 31397696,
-                "sha256": "11a04bdc58fabc152e8b9248cc19bfe6df532240af12333ad4793c07229d8df0"
-              },
-              {
-                "name": "tokenizer.json",
-                "size": 1891928,
-                "sha256": "3acc19e1869c8a1915bfc1435fac935aad6d9a78bab92d7a5bad2ae216a9fc3f"
-              }
-            ]
+            "size": 33311367
           }
         }
-      }
-    },
-    "nsfw-mobilenetv2": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "nsfw-mobilenetv2-1.0.0.zip",
-            "sha256": "af66beb688c2d05574cd32d72bd55169acd381bdbeb2b97deb016827ad6c6af1",
-            "size": 9556862
-          }
-        }
-      }
-    },
-    "pocket-cpu-int8-onnx": {
-      "type": "data",
-      "latest": "1.0.0",
-      "versions": {
-        "1.0.0": {
-          "default": {
-            "name": "pocket-cpu-int8-onnx-1.0.0.zip",
-            "sha256": "cde1aca83d8a22061a185891b49867896096f9b0c45bd3fef86dcc40402811c7",
-            "size": 250572161
-          }
-        }
-      }
+      },
+      "keyEpoch": 1
     }
   }
 }
