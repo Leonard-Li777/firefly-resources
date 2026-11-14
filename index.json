@@ -618,24 +618,24 @@
       "versions": {
         "INT8": {
           "default": {
-            "name": "chinese-clip-int8.zip",
+            "name": "emb-a42b0c8f-INT8.zip",
             "sha256": "3cbf43ada28be28ef4ba27ebf35796aba369f103518a5acf465e32aefd3a36af",
             "size": 69298991
           }
         },
         "INT8-v2": {
           "default": {
-            "name": "chinese-clip-int8-v2.zip",
+            "name": "emb-a42b0c8f-INT8-v2.zip",
             "sha256": "7dd258bd556bde3f99980655ba15fdc92f162b7fb9bf3078f95b79af0e0cdb36",
             "size": 203157415,
             "files": [
               {
-                "name": "cn_clip_text.onnx",
+                "name": "visual.onnx",
                 "size": 153221930,
                 "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
               },
               {
-                "name": "cn_clip_vocab.txt",
+                "name": "tokens.txt",
                 "size": 109540,
                 "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
               }
