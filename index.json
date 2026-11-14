@@ -618,14 +618,14 @@
       "versions": {
         "INT8": {
           "default": {
-            "name": "emb-a42b0c8f-INT8.zip",
+            "name": "emb-a42b0c8f-1.0.0.zip",
             "sha256": "3cbf43ada28be28ef4ba27ebf35796aba369f103518a5acf465e32aefd3a36af",
             "size": 69298991
           }
         },
         "INT8-v2": {
           "default": {
-            "name": "emb-a42b0c8f-INT8-v2.zip",
+            "name": "emb-a42b0c8f-2.0.0.zip",
             "sha256": "7dd258bd556bde3f99980655ba15fdc92f162b7fb9bf3078f95b79af0e0cdb36",
             "size": 203157415,
             "files": [
