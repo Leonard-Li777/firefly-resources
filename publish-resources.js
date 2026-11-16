@@ -90,11 +90,24 @@ async function main() {
     if (fs.existsSync(dest) && fs.statSync(dest).size > 0) return dest
     const res = spawnSync(
       'gh',
-      ['release', 'download', tag, '--repo', repo, '--pattern', assetName, '--dir', cacheDir, '--clobber'],
+      [
+        'release',
+        'download',
+        tag,
+        '--repo',
+        repo,
+        '--pattern',
+        assetName,
+        '--dir',
+        cacheDir,
+        '--clobber'
+      ],
       { encoding: 'utf8', stdio: 'pipe' }
     )
     if (res.status !== 0) {
-      throw new Error(`gh release download 失败（${repo} ${tag} ${assetName}）：${(res.stderr || '').trim()}`)
+      throw new Error(
+        `gh release download 失败（${repo} ${tag} ${assetName}）：${(res.stderr || '').trim()}`
+      )
     }
     return dest
   }
@@ -102,7 +115,11 @@ async function main() {
   const fetchOnline = async ({ resourceId, source, platformKey, version }) => {
     if (offline) return null
     const provider = source && source.upstream && source.upstream.provider
-    if (provider === 'firefly-omni-ci-resources' || provider === 'firefly-omni-release' || provider === 'github-release') {
+    if (
+      provider === 'firefly-omni-ci-resources' ||
+      provider === 'firefly-omni-release' ||
+      provider === 'github-release'
+    ) {
       const assetName = source.upstream.assetMap[platformKey]
       if (!assetName) return null
       const tag = source.upstream.tag || version
@@ -141,7 +158,17 @@ async function main() {
   for (const m of summary.skipped) console.log(`  • 已存在，跳过 ${m.name}`)
   for (const m of summary.missing) console.log(`  ✗ 本地文件缺失 ${m.localPath}`)
   for (const m of summary.errors) console.log(`  ✗ 错误 ${m.resourceId} ${m.name}: ${m.message}`)
-  for (const p of summary.pruned) console.log(`  ♻ 裁剪 ${p.resourceId}: ${p.versions.join(', ')}`)
+  if (
+    summary.r2Uploaded &&
+    (summary.r2Uploaded.length > 0 || summary.r2Skipped.length > 0 || summary.r2Errors.length > 0)
+  ) {
+    console.log(
+      `[publish-r2] Cloudflare R2 同步：上传 ${summary.r2Uploaded.length}，跳过 ${summary.r2Skipped.length}，错误 ${summary.r2Errors.length}`
+    )
+    for (const m of summary.r2Uploaded) console.log(`  ☁️↑ [R2] ${m.name} (${m.size} B)`)
+    for (const m of summary.r2Skipped) console.log(`  ☁️• [R2] 已存在，跳过 ${m.name}`)
+    for (const m of summary.r2Errors) console.log(`  ☁️✗ [R2] 错误 ${m.name}: ${m.message}`)
+  }
   console.log(`[publish] 索引已更新：${summary.indexUpdatedAt}`)
 
   if (summary.errors.length > 0) process.exitCode = 1

@@ -1,0 +1,18 @@
+{
+  "resourceId": "llama-cpp",
+  "type": "engine",
+  "priority": 90,
+  "description": "llama.cpp 跨平台推理运行时二进制（含老旧 CPU 与 Vulkan 兼容补全包及官方多硬件后端镜像包）",
+  "upstream": {
+    "kind": "online",
+    "provider": "llama-compat-release",
+    "repo": "Leonard-Li777/firefly-ai-folder",
+    "assetMap": {
+      "win32-x64": "llama-{tag}-bin-win-cpu-x64.zip",
+      "darwin-arm64": "llama-{tag}-bin-macos-arm64.tar.gz",
+      "darwin-x64": "llama-{tag}-bin-macos-x64.tar.gz",
+      "linux-x64": "llama-{tag}-bin-ubuntu-x64.tar.gz"
+    },
+    "notes": "由 apps/firefly-ai-engine/.github/workflows/build-llama-compat.yml 自动构建与镜像。同步发布至 firefly-resources GitHub Release (tag=resources) 和 Cloudflare R2 (firefly-resources/ 与 llama-cpp/ 双路径)，并登记于 index.json。"
+  }
+}

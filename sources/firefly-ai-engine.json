@@ -1,0 +1,18 @@
+{
+  "resourceId": "firefly-ai-engine",
+  "type": "engine",
+  "priority": 95,
+  "description": "Firefly AI Engine 跨平台本地多模态推理引擎二进制（Tauri 运行时，提供大语言模型与多模态加速调度）",
+  "upstream": {
+    "kind": "online",
+    "provider": "firefly-ai-engine-release",
+    "repo": "Leonard-Li777/firefly-ai-folder",
+    "assetMap": {
+      "win32-x64": "firefly-ai-engine-windows-x64.zip",
+      "darwin-arm64": "firefly-ai-engine-darwin-arm64.tar.gz",
+      "darwin-x64": "firefly-ai-engine-darwin-x64.tar.gz",
+      "linux-x64": "firefly-ai-engine-linux-x64.tar.gz"
+    },
+    "notes": "由 .github/workflows/build-ai-engine.yml 矩阵构建并聚合打包。各平台构件标准化命名后通过 publish-resources.js 同步发布至 firefly-resources GitHub Release (tag=resources) 和 Cloudflare R2 (firefly-resources/ 桶路径)，并登记于 index.json。"
+  }
+}
