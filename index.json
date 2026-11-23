@@ -614,7 +614,7 @@
     },
     "a42b0c8f": {
       "type": "data",
-      "latest": "INT8-v4",
+      "latest": "INT8-v5",
       "versions": {
         "INT8": {
           "default": {
@@ -716,6 +716,30 @@
                 "name": "omw_concepts_gemma_512.meta.json",
                 "size": 1311988,
                 "sha256": "7654dd9ec65e639634b402b6c254acb4b15324aad58c12dda284e9586544d79c"
+              }
+            ]
+          }
+        },
+        "INT8-v5": {
+          "default": {
+            "name": "chinese-clip-int8-v5.zip",
+            "sha256": "db4a06074f508b45c1ceefc25ab276342122bdab048f599adb01d414138656ca",
+            "size": 242780794,
+            "files": [
+              {
+                "name": "chinese-clip-vit-b-16-int8.onnx",
+                "size": 89448944,
+                "sha256": "bf37c26e5b9174f5a2084a7a67ebf1827cfea440fd55f642ab1de23b1eb10121"
+              },
+              {
+                "name": "cn_clip_text.onnx",
+                "size": 153221930,
+                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
+              },
+              {
+                "name": "cn_clip_vocab.txt",
+                "size": 109540,
+                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
               }
             ]
           }
