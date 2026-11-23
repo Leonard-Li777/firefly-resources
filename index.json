@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "containerTag": "resources",
-  "updatedAt": "2026-11-16T12:58:08.943Z",
+  "updatedAt": "2026-11-23T18:04:07.477Z",
   "resources": {
     "fastfetch": {
       "type": "tool",
@@ -753,13 +753,13 @@
     },
     "offline-bundle": {
       "type": "bundle",
-      "latest": "1.0.0",
+      "latest": "1.1.0",
       "versions": {
-        "1.0.0": {
+        "1.1.0": {
           "default": {
-            "name": "firefly-offline-bundle-1.0.0.zip",
-            "sha256": "1339677f2b5f2c75f1f9f008d7ddc8816ef925e92636510b2ae57b9936a5ea94",
-            "size": 1543875879
+            "name": "firefly-offline-bundle-1.1.0.zip",
+            "sha256": "ed5db8c91458a2df18dbbf2af05799d87d9fc98f52ed3f466b4af81976df0648",
+            "size": 1506449825
           }
         }
       }
