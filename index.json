@@ -616,110 +616,6 @@
       "type": "data",
       "latest": "INT8-v5",
       "versions": {
-        "INT8": {
-          "default": {
-            "name": "emb-a42b0c8f-1.0.0.zip",
-            "sha256": "3cbf43ada28be28ef4ba27ebf35796aba369f103518a5acf465e32aefd3a36af",
-            "size": 69298991
-          }
-        },
-        "INT8-v2": {
-          "default": {
-            "name": "emb-a42b0c8f-2.0.0.zip",
-            "sha256": "7dd258bd556bde3f99980655ba15fdc92f162b7fb9bf3078f95b79af0e0cdb36",
-            "size": 203157415,
-            "files": [
-              {
-                "name": "visual.onnx",
-                "size": 153221930,
-                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
-              },
-              {
-                "name": "tokens.txt",
-                "size": 109540,
-                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
-              }
-            ]
-          }
-        },
-        "INT8-v3": {
-          "default": {
-            "name": "chinese-clip-int8-v3.zip",
-            "sha256": "b3a8894da5ccfeafc086db83174306f9dc368b982faf8f12aecf8b625b7416bf",
-            "size": 242100071,
-            "files": [
-              {
-                "name": "cn_clip_text.onnx",
-                "size": 153221930,
-                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
-              },
-              {
-                "name": "cn_clip_vocab.txt",
-                "size": 109540,
-                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
-              },
-              {
-                "name": "tags_visual_gemma_512.bin",
-                "size": 307200,
-                "sha256": "d1e58808dfb7cdab5cafc1eb6a88b16b2af15241114ff597b99c4c8729fc61fc"
-              },
-              {
-                "name": "tags_visual_gemma_512.meta.json",
-                "size": 5020,
-                "sha256": "a0aca7ba21f3d60f56b3596cb07d5761ebdcddf209404e3f4a8303eb7117ab33"
-              },
-              {
-                "name": "omw_concepts_gemma_512.bin",
-                "size": 21428736,
-                "sha256": "03431b96e7289c25135e991b9ff370c6b3627f3111f2f96b221b96bf8fcb69f1"
-              },
-              {
-                "name": "omw_concepts_gemma_512.meta.json",
-                "size": 1167905,
-                "sha256": "09a35cf494d8f369a2a512ef9d57d9d47b6d33f7f05760edd630a795c24445c6"
-              }
-            ]
-          }
-        },
-        "INT8-v4": {
-          "default": {
-            "name": "chinese-clip-int8-v4.zip",
-            "sha256": "f08e3c473e3c9d330b8a7259d7a4b6a5559f3f404188a2b23f16ec5588fc66e1",
-            "size": 267800222,
-            "files": [
-              {
-                "name": "cn_clip_text.onnx",
-                "size": 153221930,
-                "sha256": "dcde5ef0a62c052b3418587e118978cb61f57ca77d77e49638dd5af21e0a20db"
-              },
-              {
-                "name": "cn_clip_vocab.txt",
-                "size": 109540,
-                "sha256": "45bbac6b341c319adc98a532532882e91a9cefc0329aa57bac9ae761c27b291c"
-              },
-              {
-                "name": "tags_visual_gemma_512.bin",
-                "size": 307200,
-                "sha256": "d1e58808dfb7cdab5cafc1eb6a88b16b2af15241114ff597b99c4c8729fc61fc"
-              },
-              {
-                "name": "tags_visual_gemma_512.meta.json",
-                "size": 5020,
-                "sha256": "a0aca7ba21f3d60f56b3596cb07d5761ebdcddf209404e3f4a8303eb7117ab33"
-              },
-              {
-                "name": "omw_concepts_gemma_512.bin",
-                "size": 24074752,
-                "sha256": "a6ba0e6816f93c28f16a1ecdbc4f024c54aed029f68dec5f27efae9f981432d9"
-              },
-              {
-                "name": "omw_concepts_gemma_512.meta.json",
-                "size": 1311988,
-                "sha256": "7654dd9ec65e639634b402b6c254acb4b15324aad58c12dda284e9586544d79c"
-              }
-            ]
-          }
-        },
         "INT8-v5": {
           "default": {
             "name": "chinese-clip-int8-v5.zip",
@@ -744,8 +640,7 @@
             ]
           }
         }
-      },
-      "keyEpoch": 1
+      }
     },
     "a892a600": {
       "type": "data",
@@ -753,7 +648,7 @@
       "versions": {
         "INT8": {
           "default": {
-            "name": "emb-a892a600-1.0.0.zip",
+            "name": "mobile-clip-int8.zip",
             "sha256": "a236176147ad695655d2d54c810f925d574620689299b713484018b7dd8a910c",
             "size": 57910236
           }
