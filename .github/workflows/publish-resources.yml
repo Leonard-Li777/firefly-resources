@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       resourceIds:
-        description: '逗号分隔的资源 ID（或 all）'
+        description: '逗号分隔的资源 ID（或 all = 全部可自动发布资源；不存在的 ID 会直接失败）'
         required: true
         default: 'all'
       version:
-        description: '可选：指定版本过滤（留空按 sources 默认）'
+        description: '可选：指定版本（仅单个资源可用；留空取 index 当前版本）'
         required: false
         default: ''
       keep:
@@ -29,14 +29,13 @@ jobs:
       - name: Publish resources
         run: |
           node publish-resources.js --upstream "${{ inputs.resourceIds }}" \
-            --version "${{ inputs.version }}" --keep "${{ inputs.keep }}" \
-            || echo "::warning::--upstream 自动发布分支尚未实现（CLI 仅支持 --manifest），本次未发布任何资源；请用本地 --manifest 发布或先补齐 --upstream"
+            --version "${{ inputs.version }}" --keep "${{ inputs.keep }}"
         shell: bash
         env:
           # 仓库已转私有：gh CLI 需显式 token（优先长期 PAT，回退 Actions 默认 token——对本仓库仍有写权限）
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-    # 说明：首版以"本地迁移发布"为主（开发机运行 node publish-resources.js --manifest ...）。
-    # --upstream 自动刷新模式待 sources 上游自动化就绪后接入；当前占位避免 CI 空转失败。
-    # 待办：publish-resources.js 增加 --upstream 分支，按 sources/<id>.json 的上游规则
-    #       自动下载/校验/上传，并把本 workflow 的 inputs 接入真实发布。
+    # --upstream 语义：按 sources/<id>.json 的上游规则，以 index 中的当前版本重新拉取资产并归档发布，
+    # 用于「远端资产缺失/漂移对账重发」；新版本的生产仍由各资源自己的构建流水线驱动。
+    # all 模式只发布「在线 + 声明了 platforms/assetMap + 非 deprecated」的子集，其余逐个打印跳过原因。
+    # 显式指定资源时不允许静默跳过：sources 缺失、上游不可自动发布、无法确定版本一律失败退出。

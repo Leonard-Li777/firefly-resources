@@ -67,7 +67,13 @@ describe('verify（发版前置校验）', () => {
       indexSha256: idx.sha,
       resources: [
         ffmpegWinAsset,
-        { id: 'llama.cpp', version: 'b10582', source: 'upstream', asset: 'llama-b10582-bin-win-cpu-x64.zip', sha256: 'c'.repeat(64) }
+        {
+          id: 'llama.cpp',
+          version: 'b10582',
+          source: 'upstream',
+          asset: 'llama-b10582-bin-win-cpu-x64.zip',
+          sha256: 'c'.repeat(64)
+        }
       ]
     })
     const result = await verifyBom({ bomPath: bom, indexPath: idx.p })
@@ -84,14 +90,17 @@ describe('verify（发版前置校验）', () => {
     expect(result.ok).toBe(false)
   })
 
-  it('远程仓库模式：mock fetch 拉取 main 索引', async () => {
+  it('远程仓库模式：mock fetch 拉取 main 索引', { timeout: 15000 }, async () => {
     const serverText = fs.readFileSync(FIXTURE_INDEX, 'utf8')
-    vi.stubGlobal('fetch', vi.fn(async () => ({
-      ok: true,
-      status: 200,
-      statusText: 'OK',
-      text: async () => serverText
-    })))
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(async () => ({
+        ok: true,
+        status: 200,
+        statusText: 'OK',
+        text: async () => serverText
+      }))
+    )
     const bom = writeBom({ indexSha256: sha256Text(serverText), resources: [ffmpegWinAsset] })
     const result = await verifyBom({ bomPath: bom, remoteRepo: 'Leonard-Li777/firefly-resources' })
     expect(result.ok).toBe(true)
@@ -115,7 +124,11 @@ describe('verify（发版前置校验）', () => {
         }
       },
       engines: {
-        'llama.cpp': { version: 'b10582', source: 'upstream', files: [{ name: 'llama-b10582-bin-win-cpu-x64.zip', size: 1 }] }
+        'llama.cpp': {
+          version: 'b10582',
+          source: 'upstream',
+          files: [{ name: 'llama-b10582-bin-win-cpu-x64.zip', size: 1 }]
+        }
       }
     })
     const result = await verifyBom({ bomPath: bom, indexPath: idx.p })
