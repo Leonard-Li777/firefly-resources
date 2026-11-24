@@ -12,9 +12,9 @@ on:
         required: false
         default: ''
       keep:
-        description: '历史版本保留数（0=不裁剪）'
+        description: '历史版本保留数（默认 2 = 当前最新 + 上一版；0 = 不裁剪）'
         required: false
-        default: '0'
+        default: '2'
 
 jobs:
   publish:
@@ -29,7 +29,8 @@ jobs:
       - name: Publish resources
         run: |
           node publish-resources.js --upstream "${{ inputs.resourceIds }}" \
-            --version "${{ inputs.version }}" --keep "${{ inputs.keep }}" || true
+            --version "${{ inputs.version }}" --keep "${{ inputs.keep }}" \
+            || echo "::warning::--upstream 自动发布分支尚未实现（CLI 仅支持 --manifest），本次未发布任何资源；请用本地 --manifest 发布或先补齐 --upstream"
         shell: bash
         env:
           # 仓库已转私有：gh CLI 需显式 token（优先长期 PAT，回退 Actions 默认 token——对本仓库仍有写权限）

@@ -50,7 +50,7 @@ async function main() {
 
 可选：
   --force        强制覆盖模式（允许覆写已存在版本资产与更新 sha256）
-  --keep N       保留资源历史版本数（默认不裁剪）
+  --keep N       保留资源历史版本数（默认 2 = 当前最新 + 上一版；传 0 关闭裁剪）
   --dry-run      只计算并更新清单摘要，不执行上传
   --offline      禁用在线来源的自动下载/版本解析（本地缺失→计入 missing）
   --repo         资源仓库 owner/repo（默认 Leonard-Li777/firefly-resources）
@@ -148,7 +148,7 @@ async function main() {
     tag: opts.tag || 'resources',
     dryRun: !!opts.dryrun,
     force: !!opts.force,
-    keep: Number(opts.keep) || 0,
+    keep: opts.keep === undefined || opts.keep === '' ? 2 : Number(opts.keep),
     fetchLocalPath: fetchOnline
   })
 

@@ -167,6 +167,64 @@ describe('publishFromManifest（发布管线）', () => {
     expect(Object.keys(index.resources.poppler.versions)).toEqual(['2.0', '2.1'])
   })
 
+  it('本资源出现硬错误时禁止裁剪，保留回滚窗口', async () => {
+    const dir = makeTempDir('publish-prune-guard-')
+    const indexPath = path.join(dir, 'index.json')
+    const existing = {
+      schema: 1,
+      containerTag: 'resources',
+      updatedAt: '',
+      resources: {
+        ffmpeg: {
+          type: 'tool',
+          latest: '7.0',
+          versions: {
+            '6.0': {
+              'win32-x64': { name: 'ffmpeg-6.0-win32-x64.zip', sha256: 'a'.repeat(64), size: 1 }
+            },
+            '7.0': {
+              'win32-x64': { name: 'ffmpeg-7.0-win32-x64.zip', sha256: 'b'.repeat(64), size: 1 }
+            }
+          }
+        }
+      }
+    }
+    fs.writeFileSync(indexPath, JSON.stringify(existing), 'utf8')
+    const sourcesRoot = path.join(dir, 'sources')
+    fs.mkdirSync(sourcesRoot)
+    fs.writeFileSync(
+      path.join(sourcesRoot, 'ffmpeg.json'),
+      JSON.stringify({ resourceId: 'ffmpeg', type: 'tool', upstream: { kind: 'online' } }),
+      'utf8'
+    )
+    const gh = makeGhStub()
+    const fetchLocalPath = vi.fn(async ({ platformKey }) => {
+      if (platformKey === 'win32-x64') throw new Error('下载失败')
+      return writeFakeAsset(dir, 'ffmpeg-linux.zip', 'linux-bin')
+    })
+
+    const summary = await publishFromManifest({
+      manifest: {
+        resources: {
+          ffmpeg: { version: '7.1', ext: 'zip', assets: { 'win32-x64': null, 'linux-x64': null } }
+        }
+      },
+      sourcesRoot,
+      indexPath,
+      dryRun: false,
+      keep: 1,
+      ghClient: gh,
+      fetchLocalPath
+    })
+
+    expect(summary.errors).toHaveLength(1)
+    expect(summary.pruned).toHaveLength(0)
+    expect(summary.pruneSkipped?.[0]?.resourceId).toBe('ffmpeg')
+    expect(gh.deleteAssets).not.toHaveBeenCalled()
+    const index = JSON.parse(fs.readFileSync(indexPath, 'utf8'))
+    expect(Object.keys(index.resources.ffmpeg.versions)).toEqual(['6.0', '7.0', '7.1'])
+  })
+
   it('manifest 结构非法抛出', async () => {
     await expect(
       publishFromManifest({
