@@ -5,6 +5,7 @@
   "description": "共享二进制资源统一分发仓库",
   "scripts": {
     "publish": "node publish-resources.js",
+    "prune": "node prune-versions.js",
     "verify": "node verify-release-resources.js",
     "render": "node render-release-note.js",
     "test": "vitest run"
