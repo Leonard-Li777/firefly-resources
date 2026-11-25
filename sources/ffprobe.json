@@ -2,8 +2,9 @@
   "resourceId": "ffprobe",
   "type": "tool",
   "priority": 10,
-  "deprecated": true,
-  "deprecationReason": "Issue #738: ffprobe 已从打包资产剥离（BtbN 归档与 ffmpeg 同源，清理中心相关功能改为外部 ffprobe 显式门禁）",
+  "deprecated": false,
+  "deprecationReason": null,
+  "reinstatedNote": "2026-11-25 撤销 Issue #738 的剥离决定：ffprobe 与 ffmpeg 同源发布，剥离代价是视频流字幕/关键帧探测退化、深度清理中心门禁恒不可用、Omni 视频查重靠 PATH 碰运气；desktop 已重新纳入 lock 与 bin/ffprobe 装配",
   "description": "FFprobe 多媒体探测二进制（共享，desktop/omni 装配）",
   "upstream": {
     "kind": "online",
