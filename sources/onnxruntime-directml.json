@@ -2,12 +2,18 @@
   "resourceId": "onnxruntime-directml",
   "type": "tool",
   "priority": 55,
-  "description": "ONNX Runtime DirectML 版动态库（onnxruntime.dll + DirectML.dll），供 sherpa-onnx 等 ONNX 推理运行时动态加载",
+  "dest": "bin/omni",
+  "description": "ONNX Runtime + DirectML + Sherpa 多平台原生推理动态库集合，统一落位至 bin/omni",
+  "platformRuntimeLibs": {
+    "win32": ["onnxruntime.dll", "onnxruntime_dml.dll", "DirectML.dll", "sherpa-onnx-c-api.dll"],
+    "darwin": ["libonnxruntime.dylib", "libsherpa-onnx-c-api.dylib"],
+    "linux": ["libonnxruntime.so", "libsherpa-onnx-c-api.so"]
+  },
   "upstream": {
     "kind": "online",
     "provider": "k2-fsa/sherpa-onnx (ORT 1.28.2)",
     "packageUrl": "https://github.com/k2-fsa/sherpa-onnx/releases/download/v1.13.8/sherpa-onnx-v1.13.8-win-x64-shared-MT-Release-lib.tar.bz2",
     "extract": "lib/{onnxruntime.dll,onnxruntime_providers_shared.dll,sherpa-onnx-c-api.dll}",
-    "notes": "解压至 extraResources/bin/onnx（含 onnxruntime.dll、sherpa-onnx-c-api.dll 与 DirectML.dll）"
+    "notes": "解压至 extraResources/bin/omni（与 firefly-omni 可执行体同级，含平台原生推理库集）"
   }
 }

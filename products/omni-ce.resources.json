@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "product": "omni-ce",
+  "description": "Omni CE 开源社区独立发行包（不含 omni-vision/geo/text 与任何推理动态库）",
+  "entries": [
+    { "id": "exiftool", "origin": "shared-index", "dest": "bin/exiftool", "required": true }
+  ],
+  "forbiddenGlobs": [
+    "semantic/**",
+    "taxonomy/**",
+    "geo/**",
+    "models/**",
+    "presetResources/**",
+    "**/visual-vocab/**",
+    "**/libmupdf/**",
+    "**/libclang/**",
+    "bin/omni/*onnx*",
+    "bin/omni/*DirectML*",
+    "bin/omni/*sherpa*"
+  ]
+}

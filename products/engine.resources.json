@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "product": "engine",
+  "description": "Firefly AI Engine Tauri 独立发行包",
+  "entries": [
+    { "id": "fastfetch", "origin": "shared-index", "dest": "bin/fastfetch", "required": true },
+    { "id": "llama-model-download", "origin": "shared-index", "dest": "bin/llama-model-download", "required": true },
+    { "id": "configs", "origin": "workspace-built", "dest": "configs", "required": true },
+    { "id": "model", "origin": "workspace-built", "dest": "model", "required": true }
+  ],
+  "forbiddenGlobs": [
+    "semantic/**",
+    "taxonomy/**",
+    "geo/**",
+    "presetResources/**",
+    "**/libmupdf/**",
+    "**/libclang/**",
+    "models/ram/**",
+    "models/tagger/**"
+  ]
+}
