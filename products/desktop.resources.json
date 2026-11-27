@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "product": "desktop",
+  "description": "Desktop 完整端发行包（唯一全量资源宿主：托管 Pro Omni 与 Engine）",
+  "entries": [
+    { "id": "exiftool", "origin": "shared-index", "dest": "bin/exiftool", "required": true },
+    { "id": "ffmpeg", "origin": "shared-index", "dest": "bin/ffmpeg", "required": true },
+    { "id": "ffprobe", "origin": "shared-index", "dest": "bin/ffprobe", "required": true },
+    { "id": "firefly-omni", "origin": "shared-index", "sourceKind": "engine", "dest": "bin/omni", "required": true },
+    { "id": "onnxruntime-directml", "origin": "shared-index", "dest": "bin/omni", "required": true },
+    { "id": "firefly-ai-engine", "origin": "shared-index", "sourceKind": "engine", "dest": "bin/firefly-ai-engine", "required": true },
+    { "id": "geo", "origin": "shared-index", "dest": "geo", "required": true },
+    { "id": "PP-OCRv6", "origin": "shared-index", "dest": "models/PP-OCRv6", "required": true },
+    { "id": "magika", "origin": "shared-index", "dest": "models/magika", "required": true },
+    { "id": "semantic", "origin": "workspace-built", "dest": "semantic", "requiredFiles": ["semantic.pack"], "required": true },
+    { "id": "taxonomy", "origin": "workspace-built", "dest": "taxonomy", "requiredFiles": ["tag-admissibility.json", "domain_tag_matrix.json"], "required": true },
+    { "id": "tags-text-embeddings", "origin": "workspace-built", "dest": "models", "requiredFiles": ["tags_text_embeddings.bin"], "required": true },
+    { "id": "configs", "origin": "workspace-built", "dest": "configs", "required": true },
+    { "id": "model", "origin": "workspace-built", "dest": "model", "required": true },
+    { "id": "fileDimension", "origin": "workspace-built", "dest": "fileDimension", "required": true },
+    { "id": "assets", "origin": "workspace-built", "dest": "assets", "required": true },
+    { "id": "stubs", "origin": "workspace-built", "dest": "stubs", "required": true },
+    { "id": "virtual-directory-templates", "origin": "workspace-built", "dest": ".VirtualDirectory", "required": true }
+  ],
+  "forbiddenGlobs": [
+    "presetResources/**",
+    "**/visual-vocab/**",
+    "**/libmupdf/**",
+    "**/libclang/**",
+    "**/geo-cache/**",
+    "models/ram/**",
+    "models/tagger/**",
+    "**/ram_plus*.onnx",
+    "**/ram_tag_embeddings.bin",
+    "**/ram_pan_projection.json",
+    "**/ram_tag_list_*.txt",
+    "**/tags_text_zh.*",
+    "**/tags_visual_*",
+    "**/vocab_v.bin"
+  ]
+}
